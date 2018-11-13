@@ -9,18 +9,18 @@
     <nav>
         <h3 class="hidden">Navigation</h3>
         <ul>
-            <li><a href="#">My Food</a></li>
-            <li><a href="#">Food Saved</a></li>
-            <li><a href="#">Food Lost</a></li>
-            <li><a href="#">Grocery List</a></li>
+            <li><a href="<?= ROOT_URI ?>my-food.php" class="btn">My Food</a></li>
+            <li><a href="<?= ROOT_URI ?>food-saved.php" class="btn">Food Saved</a></li>
+            <li><a href="<?= ROOT_URI ?>food-lost.php" class="btn">Food Lost</a></li>
+            <li><a href="<?= ROOT_URI ?>grocery-list.php" class="btn">Grocery List</a></li>
         </ul>
     </nav>
-    <div>
+    <section>
         <h2 class="hidden">Terms and Condition</h2>
         <p>
             <a href="#">Privacy Policy</a>
             <a href="#">Terms &amp; Condition</a>
         </p>
         <p>© The Breakfast Club <?= date("Y"); ?></p>
-    </div>
+    </section>
 </aside>

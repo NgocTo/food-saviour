@@ -2,7 +2,7 @@
 include_once 'shared/header.php';
 require_once 'database.php';
 ?>
-<main>
+<main class="text-dark">
     <h1>My Food</h1>
     <form action="" method="post">
         <label for="sort">Sort by</label>

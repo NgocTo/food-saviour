@@ -24,7 +24,6 @@ a {
     text-decoration: none;
 }
 a:hover {
-    color: #256100;
     text-decoration: underline;
 }
 a:visited {
@@ -35,9 +34,6 @@ a:visited {
 }
 .text-center {
     text-align: center;
-}
-.center {
-
 }
 /*** PADDINGS ***/
 .pt-1 {
@@ -205,9 +201,9 @@ a:visited {
 
 /*** BUTTONS ***/
 .btn {
-    background-color: #256100;
-    color: #FFFFFF;
-    border: 1px solid #C4EF7B;
+    background-color: #E9E9E7;
+    color: #4E4A46;
+    border: none;
     border-radius: 5px;
     padding: 0.2rem 1rem;
 }
@@ -217,7 +213,6 @@ a:visited {
 }
 .btn:hover {
     background-color: #C4EF7B;
-    color: #4E4A46;
 }
 
 .btn-grey {
@@ -235,11 +230,6 @@ a:visited {
     background-color: #E9E9E7;
 }
 
-.btn-selected {
-    background-color: #256100;
-    color: #ffffff;
-    border-radius: 6px;
-}
 .btn-outline {
     background-color: none;
     border: 1px solid #256100;
