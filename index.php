@@ -9,19 +9,19 @@ include_once 'shared/header.php'
 ?>
 
 <main class="text-dark">
-    <h1>My Food</h1>
+    <h1 class="text-green">My Food</h1>
     <form action="" method="post" id="sort-form">
-        <label for="sort">Sort by</label>
-        <select id="sort" name="sort">
+        <label for="sort" class="text-darkgreen">Sort by</label>
+        <select id="sort" name="sort" class="pulldownbox">
             <option value="date">Expiry Date</option>
             <option value="category">Category</option>
         </select>
-        <button>Go</button>
+        <button class="btn-green">Go</button>
     </form>
     <hr />
     <div>
-        <h2>This week</h2>
-        <div class="item">
+        <h2 class="text-green">This week</h2>
+        <div class="item item-danger">
             <img src="img/banana.svg" alt="food" class="item-image">
             <div class="item-details">
                 <h3 class="item-title">Bananas</h3>
@@ -36,7 +36,7 @@ include_once 'shared/header.php'
             </div>
         </div>
 
-        <div class="item">
+        <div class="item item-danger">
         <img src="img/banana.svg" alt="food" class="item-image">
             <div class="item-details">
                 <h3 class="item-title">Bananas</h3>
@@ -50,7 +50,7 @@ include_once 'shared/header.php'
                 </div>
             </div>
         </div>
-        <div class="item">
+        <div class="item item-danger">
         <img src="img/banana.svg" alt="food" class="item-image">
             <div class="item-details">
                 <h3 class="item-title">Bananas</h3>

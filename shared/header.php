@@ -1,8 +1,8 @@
 <header>
     <form action="" method="post">
-        <label for="search">Search: </label>
+        <!-- <label class="text-dark" for="search">Search: </label> -->
         <span class="fas fa-search"></span>
-        <input type="text" id="search" name="search" placeholder="Type in to search" />
+        <input style="float: right; "type="text" id="search" name="search" placeholder="Type in to search" class="inputbox"/>
     </form>
     <ul>
         <li><a href="<?= ROOT_URI ?>">

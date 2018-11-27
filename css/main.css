@@ -1,24 +1,53 @@
 /* HEADER STYLING */
 
-
-
 /* SIDEBAR STYLING */
-
-
-
-/* MAIN STYLING */
-body {
-    background-color: #E9E9E7;
-}
-aside, header, main {
-    border: 1px solid black;
-}
 aside {
+    position: relative;
     width: 20%;
     height: 100vh;
     display: inline-block;
     vertical-align: top;
     background-color: #ffffff;
+}
+
+.block a {
+    display: block;
+    width: 60%;
+    border: none;
+    border-radius: 5px;
+    background-color: #C4EF7B;
+    padding: 8px 28px;
+    font-size: 16px;
+    cursor: pointer;
+    text-align: center;
+    margin-top: 0.75em;
+    margin-bottom: 0.75em;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.block a:hover {
+    background-color: #005b2d;
+    color: #ffffff;
+    text-decoration: none;
+}
+
+.inputbox {
+  border-color: #C4EF7B;
+  border-style: solid;
+}
+
+.pulldownbox {
+  background-color: #ffffff;
+  border-color: #C4EF7B;
+}
+
+
+
+
+/* MAIN STYLING */
+aside, header, main {
+    border: 1px solid black;
 }
 main {
     padding: 1em;
@@ -90,4 +119,86 @@ main {
 }
 .item-options div:hover {
     background-color: #E9E9E7;
+}
+.item-danger {
+    border-top: 4px solid #D10000;
+}
+.item-warning {
+    border-top: 4px solid #D6AE2F;
+}
+.item-safe {
+    border-top: 4px solid #256100;
+}
+.foodcontainer {
+  background-color: white;
+  width: 275px;
+  height: 126px;
+  box-shadow: 1px 1px 1px #4E4A46;
+
+}
+
+.leftfoodcontainer {
+  width: 100px;
+  height: 100px;
+  float: left;
+
+}
+
+
+.rightfoodcontainer {
+  width: 100px;
+  height: 100px;
+  float: right;
+
+}
+
+.containerhr {
+  width: 65%;
+  float: right;
+}
+
+
+.foodcontainerbuttons {
+  background-color: #E9E9E7;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+}
+
+.bg-grey {
+    background-color: #e9e9e7;
+}
+
+.text-green {
+    color: #256100;
+}
+
+.text-dark {
+    color: #4e4a46;
+}
+
+.text-darkgreen {
+    color: #013C44;
+}
+
+.text-light {
+    color: #e9e9e7;
+}
+
+.btn-green {
+    background-color: #C4EF7B;
+    color: #013C44;
+    border: 1px solid #C4EF7B;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+}
+
+/* FOOTER STYLING */
+
+#footer {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    border-top: 1px solid #E9E9E7;
+    text-align: center;
 }

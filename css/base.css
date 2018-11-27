@@ -13,6 +13,7 @@ body {
     box-sizing: border-box;
     margin: 0 auto;
     font-family: 'Open Sans', sans-serif;
+    background-color: #E9E9E7;
 }
 ul {
     padding: 0;
@@ -180,12 +181,12 @@ a:visited {
     color: red;
 }
 .text-warning {
-    /* color: #E0CB52; */
+
     color: #AA5D00;
 }
 .text-success {
     color: #006600;
-    /* color: #007a00; */
+
 }
 .text-dark {
     color: #4e4a46;
@@ -204,19 +205,34 @@ a:visited {
 }
 
 /*** BUTTONS ***/
-.btn {
+
+
+.btn-action {
     background-color: #E9E9E7;
-    color: #4E4A46;
-    border: none;
+    color: #000000;
+    border: 1px solid #E9E9E7;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    float: right;
+    margin-top: -15px;
+
+
+}
+
+.btn-test {
+    background-color: #E9E9E7;
+    color: #000000;
+    border: 1px solid #E9E9E7;
     border-radius: 5px;
     padding: 0.2rem 1rem;
 }
-.btn {
-    -webkit-transition-duration: 0.3s; /* Safari */
-    transition-duration: 0.3s;
-}
-.btn:hover {
+
+.btn-go {
     background-color: #C4EF7B;
+    color: #000000;
+    border: 1px solid #E9E9E7;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
 }
 
 .btn-grey {
@@ -234,12 +250,7 @@ a:visited {
     background-color: #E9E9E7;
 }
 
-.btn-outline {
-    background-color: none;
-    border: 1px solid #256100;
-    border-radius: 5px;
-    padding: 0.2rem 1rem;
-}
+
 .btn-outline:hover {
     background-color: #256100;
     color: #ffffff;
