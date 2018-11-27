@@ -15,7 +15,7 @@
             <li><a href="<?= ROOT_URI ?>grocery-list.php" class="btn">Grocery List</a></li>
         </ul>
     </nav>
-    <section>
+    <section class="terms-condition">
         <h2 class="hidden">Terms and Condition</h2>
         <p>
             <a href="#">Privacy Policy</a>

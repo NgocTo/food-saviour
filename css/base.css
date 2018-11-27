@@ -12,6 +12,7 @@ green: #256100
 body {
     box-sizing: border-box;
     margin: 0 auto;
+    font-family: 'Open Sans', sans-serif;
 }
 ul {
     padding: 0;
@@ -31,6 +32,9 @@ a:visited {
 }
 .hidden {
     font-size: 0;
+}
+.hide {
+    display: none;
 }
 .text-center {
     text-align: center;

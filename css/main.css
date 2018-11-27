@@ -7,3 +7,87 @@
 
 
 /* MAIN STYLING */
+body {
+    background-color: #E9E9E7;
+}
+aside, header, main {
+    border: 1px solid black;
+}
+aside {
+    width: 20%;
+    height: 100vh;
+    display: inline-block;
+    vertical-align: top;
+    background-color: #ffffff;
+}
+main {
+    padding: 1em;
+}
+#main-container {
+    width: 77%;
+    display: inline-block;
+    vertical-align: top;
+}
+#sort-form {
+    text-align: right;
+}
+.terms-condition {
+    text-align: center;
+}
+.item {
+    position: relative;
+    background-color: #ffffff;
+    width: 25%;
+    display: inline-block;
+    border-radius: 4px;
+    box-shadow: 1px 1px 5px 2px rgb(187, 178, 168);
+    padding: 0.5em 1em;
+    margin: 0.5em 1%;
+}
+.item-image {
+    border-radius: 50%;
+    width: 20%;
+    padding: 2%;
+    background: white;
+    display: inline-block;
+    border: 1px solid black;
+    vertical-align: middle;
+}
+.item-details {
+    width: 65%;
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5%;
+}
+.item-title {
+    font-family: 'Open Sans Condensed', sans-serif;
+    font-size: 1.875em;
+    margin: 0.5em 0em;
+    border-bottom: 1px solid #E9E9E7;
+}
+.item-time {
+    margin-top: 0;
+}
+.item-action {
+    text-align: right;
+}
+.item-options {
+    position: absolute;
+    right: 1em;
+    top: 9em;
+    width: 4.4em;
+    background-color: #fff;
+    border: 1px solid #E9E9E7;
+    text-align: left;
+    border-radius: 5px;
+}
+.item-options div {
+    padding: 0.1em 0.5em;
+}
+.item-options div:nth-child(n+1) {
+    border-top: 1px solid #E9E9E7;
+    margin: 0;
+}
+.item-options div:hover {
+    background-color: #E9E9E7;
+}
