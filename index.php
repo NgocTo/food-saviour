@@ -1,7 +1,7 @@
 <?php
 include_once 'shared/head.php';
-require_once 'database.php';
 include_once 'shared/sidebar.php';
+require_once 'read.php';
 ?>
 <div id="main-container">
 <?php
@@ -21,11 +21,14 @@ include_once 'shared/header.php'
     <hr />
     <div>
         <h2 class="text-green">This week</h2>
+        <?php
+            while($item = $items->fetch()) {
+        ?>
         <div class="item item-danger">
-            <img src="img/banana.svg" alt="food" class="item-image">
+            <img src="<?= $item['image'] ?>" alt="food" class="item-image">
             <div class="item-details">
-                <h3 class="item-title">Bananas</h3>
-                <p class="item-time">1 day(s) left</p>
+                <h3 class="item-title"><?= $item["foodName"] ?></h3>
+                <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
             </div>
             <div class="item-action">
                 <button class="btn-grey item-action-btn">Action</button>
@@ -35,35 +38,10 @@ include_once 'shared/header.php'
                 </div>
             </div>
         </div>
+        <?php
+            }
+        ?>
 
-        <div class="item item-danger">
-        <img src="img/banana.svg" alt="food" class="item-image">
-            <div class="item-details">
-                <h3 class="item-title">Bananas</h3>
-                <p class="item-time">1 day(s) left</p>
-            </div>
-            <div class="item-action">
-                <button class="btn-grey item-action-btn">Action</button>
-                <div class="hide item-options">
-                    <div>Eat</div>
-                    <div>Toss</div>
-                </div>
-            </div>
-        </div>
-        <div class="item item-danger">
-        <img src="img/banana.svg" alt="food" class="item-image">
-            <div class="item-details">
-                <h3 class="item-title">Bananas</h3>
-                <p class="item-time">1 day(s) left</p>
-            </div>
-            <div class="item-action">
-                <button class="btn-grey item-action-btn">Action</button>
-                <div class="hide item-options">
-                    <div>Eat</div>
-                    <div>Toss</div>
-                </div>
-            </div>
-        </div>
     </div>
     <hr />
     <script src="js/main.js"></script>
