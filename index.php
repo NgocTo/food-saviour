@@ -2,6 +2,7 @@
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 require_once 'read.php';
+$_SESSION['userId'] = 1;
 ?>
 <div id="main-container">
 <?php
@@ -35,6 +36,8 @@ include_once 'shared/header.php'
                 <div class="hide item-options">
                     <div>Eat</div>
                     <div>Toss</div>
+                    <div>Edit</div>
+                    <div>Delete</div>
                 </div>
             </div>
         </div>
