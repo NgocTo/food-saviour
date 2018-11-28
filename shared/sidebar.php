@@ -11,7 +11,7 @@
 
 
         <ul>
-          <li class="block"><a href="<?= ROOT_URI ?>my-food.php">My Food</a></li>
+          <li class="block"><a href="<?= ROOT_URI ?>index.php">My Food</a></li>
           <li class="block"><a href="<?= ROOT_URI ?>food-saved.php">Food Saved</a></li>
           <li class="block"><a href="<?= ROOT_URI ?>food-lost.php">Food Lost</a></li>
           <li class="block"><a href="<?= ROOT_URI ?>grocery-list.php">Grocery List</a></li>
