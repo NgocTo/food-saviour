@@ -20,32 +20,33 @@ include_once 'shared/header.php'
         <button class="btn-green">Go</button>
     </form>
     <hr />
-    <div>
+    <section>
         <h2 class="text-green">This week</h2>
-        <?php
-            while($item = $items->fetch()) {
-        ?>
-        <div class="item item-danger">
-            <img src="<?= $item['image'] ?>" alt="food" class="item-image">
-            <div class="item-details">
-                <h3 class="item-title"><?= $item["foodName"] ?></h3>
-                <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
-            </div>
-            <div class="item-action">
-                <button class="btn-grey item-action-btn">Action</button>
-                <div class="hide item-options">
-                    <div>Eat</div>
-                    <div>Toss</div>
-                    <div>Edit</div>
-                    <div>Delete</div>
+            <?php
+                while($item = $items->fetch()) {
+            ?>
+            <div class="item item-danger">
+                <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
+                <div class="item-details">
+                    <h3 class="item-title"><?= $item["foodName"] ?></h3>
+                    <div class="hide item-options">
+                        <div>Edit</div>
+                        <div>Delete</div>
+                    </div>
+                    <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
+                </div>
+                <div class="item-action">
+                    <button class="btn-grey item-action-btn">Action</button>
+                    <div class="hide action-options">
+                        <div>Eat</div>
+                        <div>Toss</div>
+                    </div>
                 </div>
             </div>
-        </div>
         <?php
             }
         ?>
-
-    </div>
+    </section>
     <hr />
     <script src="js/main.js"></script>
 </main>
