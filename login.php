@@ -31,11 +31,11 @@ include_once("shared/head.php");
 	</div>
 	<div>
 		<label for="username">Username: </label>
-		<input type="text" id="username" name="username" />
+		<input type="text" id="username" name="username" required />
 	</div>
 	<div>
 		<label for="email">Email: </label>
-		<input type="email" id="email" name="email" />
+		<input type="email" id="email" name="email" required />
 	</div>
 	<div>
 		<label for="pass">Password: </label>
@@ -43,7 +43,7 @@ include_once("shared/head.php");
 	</div>
 	<div>
 		<label for="pass">Confirm Password: </label>
-		<input type="password" id="pass" name="pass" />
+		<input type="password" id="pass" name="pass" required />
 	</div>
 	<button>Sign Up</button>
 </form>
