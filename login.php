@@ -22,6 +22,14 @@ include_once("shared/head.php");
 
 <form class="bg-white" action="process-signup.php" method="post">
 	<div>
+		<label for="firstName">First name: </label>
+		<input type="text" id="firstName" name="firstName" />
+	</div>
+	<div>
+		<label for="lastName">Last Name: </label>
+		<input type="text" id="lastName" name="lastName" />
+	</div>
+	<div>
 		<label for="username">Username: </label>
 		<input type="text" id="username" name="username" />
 	</div>
