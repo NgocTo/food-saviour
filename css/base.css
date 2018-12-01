@@ -205,26 +205,20 @@ a:visited {
 }
 
 /*** BUTTONS ***/
-
-
-.btn-action {
-    background-color: #E9E9E7;
-    color: #000000;
-    border: 1px solid #E9E9E7;
+.btn {
+    background-color: #C4EF7B;
+    color: #4E4A46;
+    border: 1px solid #256100;
     border-radius: 5px;
     padding: 0.2rem 1rem;
-    float: right;
-    margin-top: -15px;
-
-
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
 }
-
-.btn-test {
-    background-color: #E9E9E7;
-    color: #000000;
-    border: 1px solid #E9E9E7;
-    border-radius: 5px;
-    padding: 0.2rem 1rem;
+.btn:hover {
+    background-color: #256100;
+    color: #ffffff;
 }
 
 .btn-go {
@@ -241,15 +235,24 @@ a:visited {
     border: 1px solid #E9E9E7;
     border-radius: 5px;
     padding: 0.2rem 1rem;
-}
-.btn-grey {
-    -webkit-transition-duration: 0.3s; /* Safari */
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
 .btn-grey:hover {
     background-color: #E9E9E7;
 }
-
+.btn-outline {
+    background-color: none;
+    border: 1px solid #256100;
+    border-radius: 5px;
+    padding: 0.2rem 1rem;
+    -webkit-transition-duration: 0.3s;
+    -moz-transition-duration: 0.3s;
+    -o-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+}
 
 .btn-outline:hover {
     background-color: #256100;
