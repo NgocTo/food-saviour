@@ -1,5 +1,6 @@
 <?php
 require_once('database.php');
-$items= $pdo->prepare("SELECT * FROM `food` JOIN `categories` ON `food`.`categoryId` = `categories`.`id`");
+$items= $pdo->prepare("SELECT * FROM `food` JOIN `categories` ON `food`.`categoryId` = `categories`.`id` ORDER BY `food`.`duration` ASC");
 $items->execute();
+$results = $items->fetchAll();
 ?>
