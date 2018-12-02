@@ -1,10 +1,10 @@
 <header>
-    <form action="" method="post">
+    <form id="search-form" action="" method="post">
         <label class="hidden" for="search">Search: </label>
-        <span class="fas fa-search"></span>
         <input type="text" id="search" name="search" placeholder="Type in to search"/>
+        <button class="btn-grey"><span class="hidden">Search</span><i class="fas fa-search"></i></button>
     </form>
-    <ul>
+    <ul id="header-nav">
         <li><a href="<?= ROOT_URI ?>">
             <i class="fas fa-home" title="Home"></i>
             <span class="hidden">Home</span>

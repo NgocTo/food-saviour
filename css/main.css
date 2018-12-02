@@ -1,5 +1,30 @@
 /* HEADER STYLING */
-
+header {
+    text-align: right;
+}
+#search-form {
+    display: inline-block;
+    position: relative;
+}
+#search-form button {
+    border: none;
+    position: absolute;
+    right: -5px;
+    top: 2px;
+}
+#search-form button:hover {
+    background-color: transparent;
+}
+#header-nav {
+    display: inline-block;
+}
+#header-nav li {
+    display: inline-block;
+    padding: 0.2rem 0.5rem;
+}
+#header-nav a:hover {
+    text-decoration: none;
+}
 /* SIDEBAR STYLING */
 aside {
     position: relative;
