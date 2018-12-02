@@ -32,18 +32,6 @@ aside {
     text-decoration: none;
 }
 
-.inputbox {
-  border-color: #C4EF7B;
-  border-style: solid;
-}
-
-.pulldownbox {
-  background-color: #ffffff;
-  border-color: #C4EF7B;
-}
-
-
-
 
 /* MAIN STYLING */
 aside, header, main {

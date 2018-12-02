@@ -15,6 +15,14 @@ body {
     font-family: 'Open Sans', sans-serif;
     background-color: #E9E9E7;
 }
+::selection {
+    background-color: #256100;
+    color: #ffffff;
+}
+::-moz-selection {
+    background-color: #256100;
+    color: #ffffff;
+}
 ul {
     padding: 0;
 }
@@ -178,7 +186,6 @@ a:visited {
 /*** TEXT COLOURS ***/
 .text-danger {
     color: #900;
-    color: red;
 }
 .text-warning {
 
@@ -211,6 +218,7 @@ a:visited {
     border: 1px solid #256100;
     border-radius: 5px;
     padding: 0.2rem 1rem;
+    font-family: 'Open Sans', sans-serif;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -221,33 +229,28 @@ a:visited {
     color: #ffffff;
 }
 
-.btn-go {
-    background-color: #C4EF7B;
-    color: #000000;
-    border: 1px solid #E9E9E7;
-    border-radius: 5px;
-    padding: 0.2rem 1rem;
-}
-
 .btn-grey {
     background-color: transparent;
-    color: #000000;
-    border: 1px solid #E9E9E7;
+    color: #4E4A46;
+    border: 1px solid #4E4A46;
     border-radius: 5px;
     padding: 0.2rem 1rem;
+    font-family: 'Open Sans', sans-serif;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
     transition-duration: 0.3s;
 }
 .btn-grey:hover {
-    background-color: #E9E9E7;
+    background-color: #C4EF7B;
 }
 .btn-outline {
-    background-color: none;
+    background-color: transparent;
     border: 1px solid #256100;
+    color: #256100;
     border-radius: 5px;
     padding: 0.2rem 1rem;
+    font-family: 'Open Sans', sans-serif;
     -webkit-transition-duration: 0.3s;
     -moz-transition-duration: 0.3s;
     -o-transition-duration: 0.3s;
@@ -257,4 +260,26 @@ a:visited {
 .btn-outline:hover {
     background-color: #256100;
     color: #ffffff;
+}
+
+/*** TEXT BOX ***/
+input {
+    border: 1px solid #E9E9E7;
+    border-radius: 4px;
+    padding: 0.2rem;
+    font-family: 'Open Sans', sans-serif;
+}
+input:focus {
+    border: 1px solid #4E4A46;
+    outline: none;
+}
+select {
+    padding: 0.2rem;
+    border: 1px solid #E9E9E7;
+    border-radius: 4px;
+    font-family: 'Open Sans', sans-serif;
+}
+select:focus {
+    border: 1px solid #4E4A46;
+    outline: none;
 }

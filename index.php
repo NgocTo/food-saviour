@@ -14,11 +14,11 @@ include_once 'shared/header.php'
     <h1 class="text-green">My Food</h1>
     <form action="" method="post" id="sort-form">
         <label for="sort" class="text-darkgreen">Sort by</label>
-        <select id="sort" name="sort" class="pulldownbox">
+        <select id="sort" name="sort">
             <option value="date">Expiry Date</option>
             <option value="category">Category</option>
         </select>
-        <button class="btn-green">Go</button>
+        <button class="btn-grey">Go</button>
     </form>
     <hr />
     <section>
