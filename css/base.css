@@ -23,6 +23,9 @@ body {
     background-color: #256100;
     color: #ffffff;
 }
+h1 {
+    margin: 0;
+}
 ul {
     padding: 0;
 }
