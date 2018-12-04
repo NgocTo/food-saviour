@@ -1,6 +1,9 @@
 <?php
+$style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
+require_once 'read.php';
+$_SESSION['userId'] = 1;
 ?>
 <div id="main-container">
 <?php
@@ -11,26 +14,47 @@ include_once 'shared/header.php'
     <form action="" method="post" id="sort-form">
         <label for="sort" class="text-darkgreen">Sort by</label>
         <select id="sort" name="sort" class="pulldownbox">
-            <option value="date">Expiry Date</option>
-            <option value="category">Category</option>
+            <option value="amount">Amount</option>
+            <option value="bought">Date Bought</option>
+            <option value="expiry">Date Expired</option>
         </select>
         <button class="btn-green">Go</button>
     </form>
-    <hr />
-
-    <form class="" action="" method="post">
-        <label>Search</label>
-        <input type="text" />
+    <form action="" method="post" id="grocery-search">
+        <input type="text" placeholder="Search food in grocery list..." />
         <button>Search</button>
     </form>
-
-    <table>
+    <?php
+        if($_SESSION['userId'] != 1){
+            // table is empty logic
+        }else if($_SESSION['userId'] == 1){
+            // add login stuff once done
+    ?>
+    <table class="grocery-table">
         <thead>
-            <th>Items</th>
-            <th>Amount</th>
-            <th>Date Bought</th>
-            <th>Date Expired</th>
+            <th class="text-green">Items</th>
+            <th class="text-green">Amount</th>
+            <th class="text-green">Date Bought</th>
+            <th class="text-green">Date Expired</th>
         </thead>
+        <tr>
+            <td>test<?php ("SELECT `foodId` FROM `userfood` WHERE `userId` = 1"); ?></td>
+            <td>test<?php ("SELECT `amount` FROM `userfood`WHERE `userId` = 1"); ?></td>
+            <td>test<?php ("SELECT `date` FROM `userfood` WHERE `userId` = 1"); ?></td>
+            <td>test<?php ("SELECT `food`.`duration`, `userfood`.`foodId` FROM `food` JOIN `userfood` ON `userfood`.`foodId` = `food`.`id`") ?></td>
+        </tr>
+        <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        </tr>
+        <tr>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+            <td>test</td>
+        </tr>
         <tr>
             <td>test</td>
             <td>test</td>
@@ -38,7 +62,9 @@ include_once 'shared/header.php'
             <td>test</td>
         </tr>
     </table>
-
+    <?php
+        }
+    ?>
 </main>
 </div>
 <?php

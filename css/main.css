@@ -53,7 +53,7 @@ aside {
     background-color: transparent;
 }
 #add-form input {
-    
+
 }
 .block a {
     display: block;
@@ -265,4 +265,26 @@ main {
     width: 100%;
     border-top: 1px solid #E9E9E7;
     text-align: center;
+}
+
+/* GROCERY LIST */
+.grocery-table {
+    width: 100%;
+    margin-top: 1em;
+    padding: 1em;
+    background-color: white;
+}
+
+.grocery-table th, td {
+    padding: 5px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+#grocery-search {
+    margin-top: 5em;
+}
+
+#grocery-search input {
+    width: 95%;
 }
