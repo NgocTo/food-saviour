@@ -10,7 +10,7 @@ $dbpassword = "!bre@kf@5t!";
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 $stmt = $pdo->prepare("
-	SELECT * FROM `admins`
+	SELECT * FROM `users`
 	WHERE `username` = '$username'
 	AND `password` = '$password'");
 

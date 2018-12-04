@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('database.php');
 $foodName = $_POST['foodName'];
 $duration = $_POST['duration'];

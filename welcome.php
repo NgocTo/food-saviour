@@ -1,5 +1,6 @@
 
 <?php
+session_start();
 $style = "css/welcome.css";
 include_once("shared/head.php");
 ?>
