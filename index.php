@@ -120,27 +120,26 @@ include_once 'shared/header.php'
         ?>
     </section>
     <hr />
-    <!--add food pop-up form
-    <div class="form-popup" id= "addfood">
+    <!--add food pop-up form-->
+    <div class="form-popup hide bg-white" id= "addfood">
         <form action="/action_page.php" class="form-container">
         <h3>Quick Entry:</h3>
-
-            <select name="role" id="role">
-                <option value="1">Administrator</option>
-                <option value="2">Writer</option>
-                <option value="3" selected>Contributor</option>
-            </select>
-
-        <label for="email"><b>Email</b></label>
-        <input type="text" placeholder="Enter Email" name="email" required>
-
-        <label for="psw"><b>Password</b></label>
-        <input type="password" placeholder="Enter Password" name="psw" required>
-
-        <button type="submit" class="btn">Login</button>
+        <div>
+        <label for="foodName"><b>Food Name</b></label>
+        <input type="text" placeholder="Enter Email" name="foodName" required>
+        </div>
+        <div>
+        <label for="customDuration"><b>Duration</b></label>
+        <input type="number" placeholder="5 Days" name="customDuration" required>
+        </div>
+        <div>
+        <label for="customAmount"><b>Amount</b></label>
+        <input type="number" placeholder="1" name="customAmount" required>
+        </div>
+        <button type="submit" class="btn">Add</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-    </div>-->
+    </div>
     <script src="js/main.js"></script>
 </main>
 </div>
