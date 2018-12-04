@@ -1,7 +1,7 @@
 <?php
 \define('ROOT_URI', '/webdev/food-saviour/');
 
-session_start();
+
 ?>
 <!DOCTYPE html>
 <html lang="en" dir="ltr">

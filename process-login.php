@@ -1,4 +1,5 @@
 <?php
+session_start();
 require_once('database.php');
 $email = $_POST['loginEmail'];
 $password = $_POST['loginPass'];
