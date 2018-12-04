@@ -15,7 +15,7 @@ $dbpassword = "!bre@kf@5t!";
 
 $pdo = new PDO($dsn, $dbusername, $dbpassword);
 
-$stmt = $pdo->prepare("INSERT INTO `users` (`id`, `username`, `password`, `firstName`, `lastName`, 'roleId') VALUES (NULL, '$username', '$password', '$firstName', '$lastName', '$roleId'); ");
+$stmt = $pdo->prepare("INSERT INTO `users` (`id`, `username`, `password`, `firstName`, `lastName`, 'email', 'roleId') VALUES (NULL, '$username', '$password', '$firstName', '$lastName', '$email', '$roleId'); ");
 
 $stmt->execute();
 
