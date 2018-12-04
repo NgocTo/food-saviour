@@ -22,3 +22,13 @@ function searchFoodFunction(e){
     myRequest.open("GET", url, true); //true means it is asynchronous // Send urls through the url
     myRequest.send(null);
 }
+
+addFood.addEventListener("click", showAddFood, false);
+function showAddFood() {
+    var x = document.getElementById("addfood");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        document.getElementById("signup").style.display="block";
+    }
+}

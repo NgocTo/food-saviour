@@ -139,8 +139,10 @@ include_once 'shared/header.php'
         <button type="submit" class="btn">Add</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
+        <script src="js/sidebar.js"></script>
     </div>
     <script src="js/main.js"></script>
+
 </main>
 </div>
 <?php
