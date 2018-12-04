@@ -1,9 +1,11 @@
 <?php
-session_start();
 $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
-if ($_SESSION['logged-in'] === true) {
+// var_dump($_SESSION);
+// if ($_SESSION['logged-in'] === true) {
+
+$_SESSION['userId'] = 1;
 require_once 'read.php';
 
 ?>
@@ -120,7 +122,23 @@ include_once 'shared/header.php'
     <hr />
     <!--add food pop-up form-->
     <div class="form-popup" id= "addfood">
-        
+        <form action="/action_page.php" class="form-container">
+        <h3>Your role:</h3>
+            <select name="role" id="role">
+                <option value="1">Administrator</option>
+                <option value="2">Writer</option>
+                <option value="3" selected>Contributor</option>
+            </select>
+
+        <label for="email"><b>Email</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="psw"><b>Password</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button type="submit" class="btn">Login</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
     </div>
     <script src="js/main.js"></script>
 </main>
@@ -130,7 +148,7 @@ include_once 'shared/footer.php';
 ?>
 </div>
 <?php
-} else {
-	header("Location: welcome.php");
-}
+// } else {
+	// header("Location: welcome.php");
+// }
 ?>
