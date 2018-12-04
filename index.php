@@ -121,8 +121,8 @@ include_once 'shared/header.php'
     </section>
     <hr />
     <!--add food pop-up form-->
-    <div id= "addfood">
-
+    <div class="form-popup" id= "addfood">
+        
     </div>
     <script src="js/main.js"></script>
 </main>
