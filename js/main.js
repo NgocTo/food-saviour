@@ -18,6 +18,3 @@ function showItemOptions(e) {
     var elem = e.target.nextElementSibling;
     elem.classList.toggle("hide");
 }
-
-//welcome page
-signUp.addEventListener("click",functionhandler, false);

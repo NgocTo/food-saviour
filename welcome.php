@@ -56,7 +56,7 @@ include_once("shared/head.php");
 		<button class="btn-outline">Sign Up</button>
 	</form>
 </section>
-<script src="js/main.js"></script>
+<script src="js/welcome.js"></script>
 </body>
 <?php
 include_once("shared/footer.php");
