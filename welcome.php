@@ -4,7 +4,7 @@ session_start();
 $style = "css/welcome.css";
 include_once("shared/head.php");
 ?>
-
+<body>
 <div id= "welcome">
 	<h1> Welcome to Food Saviour! </h1>
 	<button id= "signUp" class="btn-outline">Sign Up</button>
@@ -56,6 +56,8 @@ include_once("shared/head.php");
 		<button class="btn-outline">Sign Up</button>
 	</form>
 </section>
+<script src="js/main.js"></script>
+</body>
 <?php
 include_once("shared/footer.php");
 ?>
