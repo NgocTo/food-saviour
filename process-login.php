@@ -1,16 +1,12 @@
 <?php
-$username = $_POST['username'];
-$password = $_POST['password'];
+require_once('database.php');
+$email = $_POST['loginEmail'];
+$password = $_POST['loginPass'];
 
-$dsn = 'mysql:host=localhost; dbname=tovu_foodsaviour; charset=utf8mb4';
-$dbusername = "tovu_bclub";
-$dbpassword = "!bre@kf@5t!";
-
-$pdo = new PDO($dsn, $dbusername, $dbpassword);
 
 $stmt = $pdo->prepare("
 	SELECT * FROM `users`
-	WHERE `username` = '$username'
+	WHERE `email` = '$email'
 	AND `password` = '$password'");
 
 $stmt->execute();
@@ -18,11 +14,9 @@ $stmt->execute();
 if($row = $stmt->fetch()){
 	$_SESSION['logged-in'] = true;
 	$_SESSION['username'] = $row['username'];
-	$_SESSION['role'] = $row['role'];
+	$_SESSION['role'] = $row['roleId'];
 	$_SESSION['id'] = $row['id'];
-
-	header("Location: my-food.php");
-
+	header("Location: index.php");
 }else{
 	header("Location: welcome.php");
 }

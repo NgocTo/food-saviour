@@ -2,8 +2,12 @@
 $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
-require_once 'read.php';
+// var_dump($_SESSION);
+// if ($_SESSION['logged-in'] === true) {
+
 $_SESSION['userId'] = 1;
+require_once 'read.php';
+
 ?>
 <div id="main-container">
 <?php
@@ -122,3 +126,8 @@ include_once 'shared/header.php'
 include_once 'shared/footer.php';
 ?>
 </div>
+<?php
+// } else {
+	// header("Location: welcome.php");
+// }
+?>

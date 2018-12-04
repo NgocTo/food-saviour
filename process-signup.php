@@ -1,28 +1,20 @@
 <?php
-
+require_once('database.php');
 $username='';
 $password='';
 $firstName='';
 $lastName='';
 $email='';
 $roleId='';
-if(isset($_GET["username"])) {
+// if(isset($_GET["signupUsername"])) {
 
-$username = $_POST['username'];
-$password = $_POST['password'];
-$firstName = $_POST['firstName'];
-$lastName = $_POST['lastName'];
-$email = $_POST['email'];
-$roleId = $_POST['roleId'];
-}
-
-
-$dsn = 'mysql:host=localhost; dbname=tovu_foodsaviour; charset=utf8mb4';
-$dbusername = "tovu_bclub";
-$dbpassword = "!bre@kf@5t!";
-
-
-$pdo = new PDO($dsn, $dbusername, $dbpassword);
+  $username = $_POST['signupUsername'];
+  $password = $_POST['signupPass'];
+  $firstName = $_POST['signupFirstName'];
+  $lastName = $_POST['signupLastName'];
+  $email = $_POST['signupEmail'];
+  $roleId = 2;
+// }
 
 $stmt = $pdo->prepare("INSERT INTO `users` (`id`, `username`, `password`, `firstName`, `lastName`, `email`, `roleId`) VALUES (NULL, '$username', '$password', '$firstName', '$lastName', '$email', '$roleId'); ");
 
