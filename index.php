@@ -126,12 +126,12 @@ include_once 'shared/header.php'
         <h3>Quick Entry:</h3>
         <div>
         <label for="foodName"><b>Food Name</b></label>
-        <input type="text" placeholder="Enter Email" name="foodName" required>
+        <input type="text" id="foodName" name="foodName" required>
         </div>
         <div>
         <label for="customDuration"><b>Duration</b></label>
-        <input type="number" placeholder="5 Days" name="customDuration" required>
-        </div>
+        <input type="number" placeholder="5" name="customDuration" required> <span>date(s)</span>
+    </div>
         <div>
         <label for="customAmount"><b>Amount</b></label>
         <input type="number" placeholder="1" name="customAmount" required>
@@ -139,7 +139,6 @@ include_once 'shared/header.php'
         <button type="submit" class="btn">Add</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-        <script src="js/sidebar.js"></script>
     </div>
     <script src="js/main.js"></script>
 
