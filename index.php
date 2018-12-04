@@ -25,24 +25,24 @@ include_once 'shared/header.php'
         <h2 class="text-green">This week</h2>
             <?php
                 foreach ($results as $item) {
-                // while($item = $items->fetch()) {
-                    if ($item["duration"] < 7) {
+                    $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    if ($duration < 7) {
             ?>
             <div class="item item-red">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
                 <div class="item-details">
-                    <h3 class="item-title"><?= $item["foodName"] ?></h3>
+                    <h3 class="item-title"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
+                    <p class="item-time"><?= $duration ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div>Eat</div>
-                        <div>Toss</div>
+                        <div id="eat">Eat</div>
+                        <div id="toss">Toss</div>
                     </div>
                 </div>
             </div>
@@ -57,24 +57,24 @@ include_once 'shared/header.php'
         <h2 class="text-green">Next week</h2>
             <?php
                 foreach ($results as $item) {
-                // while($item = $items->fetch()) {
-                    if (($item["duration"] >= 7) && ($item["duration"] < 30)) {
+                    $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    if (($duration  >= 7) && ($duration  < 30)) {
             ?>
             <div class="item item-yellow">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-yellow">
                 <div class="item-details">
-                    <h3 class="item-title"><?= $item["foodName"] ?></h3>
+                    <h3 class="item-title"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
+                    <p class="item-time"><?= $duration  ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div>Eat</div>
-                        <div>Toss</div>
+                        <div id="eat">Eat</div>
+                        <div id="toss">Toss</div>
                     </div>
                 </div>
             </div>
@@ -89,23 +89,24 @@ include_once 'shared/header.php'
         <h2 class="text-green">Next month</h2>
             <?php
                 foreach ($results as $item) {
-                    if ($item["duration"] >= 30) {
+                    $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    if ($duration >= 30) {
             ?>
             <div class="item item-green">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
                 <div class="item-details">
-                    <h3 class="item-title"><?= $item["foodName"] ?></h3>
+                    <h3 class="item-title"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $item["duration"] ?> day(s) left</p>
+                    <p class="item-time"><?= $duration ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div>Eat</div>
-                        <div>Toss</div>
+                        <div id="eat">Eat</div>
+                        <div id="toss">Toss</div>
                     </div>
                 </div>
             </div>
@@ -115,6 +116,10 @@ include_once 'shared/header.php'
         ?>
     </section>
     <hr />
+    <!--add food pop-up form-->
+    <div id= "addfood">
+
+    </div>
     <script src="js/main.js"></script>
 </main>
 </div>
