@@ -1,10 +1,11 @@
 <?php
 session_start();
 
-$email = $_POST['username'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
+$email = $_POST['email'];
 $roleId = $_POST['roleId'];
 
 
