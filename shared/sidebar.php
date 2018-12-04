@@ -1,11 +1,14 @@
 <aside>
     <h2 class="hidden">Sidebar</h2>
     <img src="<?= ROOT_URI ?>img/logo.jpg" id="logo" alt="food saviour logo" />
-    <form action="" id="add-form" method="post">
-        <label for="add" class="hidden">Add new item: </label>
-        <input type="text" id="add" name="add" placeholder="Quick Entry" class="inputbox"/>
+    <!-- <form action="" id="add-form" method="get"> -->
+        <label for="add-search" class="hidden">Add new item: </label>
+        <input type="text" id="add-search" name="add-search" placeholder="Quick Entry" class="inputbox"/>
         <button class="btn-grey"><i class="fas fa-plus"></i><span class="hidden">Add</span></button>
-    </form>
+    <!-- </form> -->
+        <div id="searchContainer">
+        </div>
+        <script src="<?= ROOT_URI ?>js/sidebar.js"></script>
     <nav>
         <h3 class="hidden">Navigation</h3>
         <ul>

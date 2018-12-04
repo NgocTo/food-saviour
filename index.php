@@ -120,10 +120,11 @@ include_once 'shared/header.php'
         ?>
     </section>
     <hr />
-    <!--add food pop-up form-->
+    <!--add food pop-up form
     <div class="form-popup" id= "addfood">
         <form action="/action_page.php" class="form-container">
-        <h3>Your role:</h3>
+        <h3>Quick Entry:</h3>
+
             <select name="role" id="role">
                 <option value="1">Administrator</option>
                 <option value="2">Writer</option>
@@ -139,7 +140,7 @@ include_once 'shared/header.php'
         <button type="submit" class="btn">Login</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
-    </div>
+    </div>-->
     <script src="js/main.js"></script>
 </main>
 </div>
