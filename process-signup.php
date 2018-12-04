@@ -1,15 +1,16 @@
 <?php
 session_start();
 
-$email = $_POST['username'];
+$username = $_POST['username'];
 $password = $_POST['password'];
 $firstName = $_POST['firstName'];
 $lastName = $_POST['lastName'];
+$email = $_POST['email'];
 $roleId = $_POST['roleId'];
 
 
 
-$dsn = "mysql:host=dev.fast.sheridanc.on.ca; dbname=tovu_foodsaviour; charset=utf8mb4";
+$dsn = 'mysql:host=localhost; dbname=tovu_foodsaviour; charset=utf8mb4';
 $dbusername = "tovu_bclub";
 $dbpassword = "!bre@kf@5t!";
 
