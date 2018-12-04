@@ -9,7 +9,7 @@ $roleId = $_POST['roleId'];
 
 
 
-$dsn = "mysql:host=dev.fast.sheridanc.on.ca; dbname=tovu_foodsaviour; charset=utf8mb4";
+$dsn = 'mysql:host=localhost; dbname=tovu_foodsaviour; charset=utf8mb4';
 $dbusername = "tovu_bclub";
 $dbpassword = "!bre@kf@5t!";
 
