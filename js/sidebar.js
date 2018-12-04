@@ -18,6 +18,13 @@ function searchFoodFunction(e){
     		}
     	}
     };
+
+    if(searchFoodVal.length < 1){
+    	results.style.display='none';
+    	return;
+    }
+
+
     myRequest.open("GET", url, true); //true means it is asynchronous // Send urls through the url
     myRequest.send(null);
 }
