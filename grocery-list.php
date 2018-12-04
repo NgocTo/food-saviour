@@ -1,5 +1,6 @@
 <?php
 $style = "css/main.css";
+session_start();
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 require_once 'read.php';
