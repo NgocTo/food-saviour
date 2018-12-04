@@ -2,6 +2,7 @@
 $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
+require_once 'database.php';
 require_once 'read.php';
 $_SESSION['userId'] = 1;
 ?>
