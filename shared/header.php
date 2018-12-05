@@ -9,9 +9,11 @@
             <i class="fas fa-home" title="Home"></i>
             <span class="hidden">Home</span>
         </a></li>
-        <li><a href="#">
-            <i class="fas fa-cog" title="Settings"></i>
-            <span class="hidden">Settings</span>
-        </a></li>
+        <li><a href="#"><i class="fas fa-cog" title="Settings"></i><span class="hidden">Settings</span></a>
+            <ul>
+                <li><a href="<?= ROOT_URI ?>process-logout.php">Logout</a></li>
+                <li><a href="<?= ROOT_URI ?>settings.php">Settings</a></li>
+            </ul>
+        </li>
     </ul>
 </header>
