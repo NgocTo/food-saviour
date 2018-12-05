@@ -5,7 +5,7 @@ include_once 'shared/sidebar.php';
 // var_dump($_SESSION);
 // if ($_SESSION['logged-in'] === true) {
 
-$_SESSION['userId'] = 1;
+$userId = $_SESSION['userId'] = 1;
 require_once 'process-read-userfood.php';
 
 ?>
@@ -45,8 +45,12 @@ include_once 'shared/header.php'
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div id="eat">Eat</div>
-                        <div id="toss">Toss</div>
+                        <form action="process-edit-eat-toss.php" method="post">
+                            <input type="hidden" name="foodId" value="<?= $item['foodId'] ?>" />
+                            <input type="hidden" name="userId" value="<?= $userId ?>" />
+                            <button id="eat" name="foodState" value="eat">Eat</button>
+                            <button id="toss" name="foodState" value="toss">Toss</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -77,8 +81,12 @@ include_once 'shared/header.php'
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div id="eat">Eat</div>
-                        <div id="toss">Toss</div>
+                        <form action="process-edit-eat-toss.php" method="post">
+                            <input type="hidden" name="foodId" value="<?= $item['foodId'] ?>" />
+                            <input type="hidden" name="userId" value="<?= $userId ?>" />
+                            <button id="eat" name="foodState" value="eat">Eat</button>
+                            <button id="toss" name="foodState" value="toss">Toss</button>
+                        </form>
                     </div>
                 </div>
             </div>
@@ -109,8 +117,12 @@ include_once 'shared/header.php'
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
                     <div class="hide action-options">
-                        <div id="eat">Eat</div>
-                        <div id="toss">Toss</div>
+                        <form action="process-edit-eat-toss.php" method="post">
+                            <input type="hidden" name="foodId" value="<?= $item['foodId'] ?>" />
+                            <input type="hidden" name="userId" value="<?= $userId ?>" />
+                            <button id="eat" name="foodState" value="eat">Eat</button>
+                            <button id="toss" name="foodState" value="toss">Toss</button>
+                        </form>
                     </div>
                 </div>
             </div>
