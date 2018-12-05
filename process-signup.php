@@ -20,5 +20,5 @@ $stmt = $pdo->prepare("INSERT INTO `users` (`id`, `username`, `password`, `first
 
 $stmt->execute();
 
-header("Location: grocery-list.php");
+header("Location: index.php");
 ?>
