@@ -185,14 +185,18 @@ main {
     border-radius: 5px;
     z-index: 5;
 }
-.action-options div {
+.action-options button {
     padding: 0.1em 0.5em;
+    background-color: #ffffff;
+    border: none;
+    width: 100%;
+    text-align: left;
 }
-.action-options div:nth-child(n+2) {
+.action-options button:nth-child(n+2) {
     border-top: 1px solid #E9E9E7;
     margin: 0;
 }
-.action-options div:hover {
+.action-options button:hover {
     background-color: #E9E9E7;
 }
 .item-red {
