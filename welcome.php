@@ -16,11 +16,11 @@ include_once("shared/head.php");
 	<form action="process-login.php" method="post">
 		<div>
 			<label for="loginEmail">Email: </label>
-			<input type="email" id="loginEmail" name="loginEmail" placeholder="email@example.com" required />
+			<input type="email" id="loginEmail" name="loginEmail" placeholder="email@example.com" value="baongoc1308@gmail.com" required />
 		</div>
 		<div>
 			<label for="loginPass">Password: </label>
-			<input type="password" id="loginPass" name="loginPass" placeholder="Must have at least 6 characters" required />
+			<input type="password" id="loginPass" name="loginPass" placeholder="Must have at least 6 characters" value="abc123" required />
 		</div>
 		<button class="btn-outline">Log In</button>
 	</form>
