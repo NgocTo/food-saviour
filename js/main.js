@@ -1,4 +1,5 @@
 // action eat/toss
+console.log('mainjs');
 var actionBtn = document.getElementsByClassName("item-action-btn");
 for (var i = 0; i < actionBtn.length; i++) {
     actionBtn[i].addEventListener("click", showOptions, false);

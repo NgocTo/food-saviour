@@ -29,10 +29,10 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
             ?>
-            <div class="item item-green">
-                <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
+            <div class="item item-red">
+                <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
                 <div class="item-details">
-                    <h3 class="item-title"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
+                    <h3 class="item-title text-danger"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
                         <div>Delete</div>
@@ -40,17 +40,16 @@ include_once 'shared/header.php'
                 </div>
             </div>
         <?php
-
                 }
         ?>
     </section>
-
+    <script src="js/main.js"></script>
 </main>
+</div>
 </div>
 <?php
 include_once 'shared/footer.php';
 ?>
-</div>
 <?php
 // } else {
 	// header("Location: welcome.php");

@@ -2,16 +2,13 @@
 $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
-require_once 'read.php';
+require_once 'process-read-food.php';
 $_SESSION['userId'] = 1;
 require_once('database.php');
 ?>
 <div id="main-container">
 <?php
 include_once 'shared/header.php';
-$stmt = $pdo->prepare("SELECT * FROM `food`");
-$stmt->execute();
-$food = $stmt->fetchAll();
 ?>
 <main class="text-dark">
     <h1 class="text-green">Grocery Store</h1>
@@ -24,6 +21,9 @@ $food = $stmt->fetchAll();
         </select>
         <button class="btn-green">Go</button>
     </form>
+
+    <hr />
+
     <form action="" method="post" id="grocery-search">
         <input type="text" placeholder="Search food in grocery list..." />
         <button>Search</button>
@@ -44,7 +44,7 @@ $food = $stmt->fetchAll();
             ?>
             <tr>
                 <td><?= $row["foodName"] ?></td>
-                <td><?= $row["categoryId"] ?></td>
+                <td><?= $row["category"] ?></td>
                 <td>
                     <form action="" method="post" id="userAddFood">
                         <select name="amount" class="pulldownbox">

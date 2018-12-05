@@ -32,7 +32,7 @@ include_once 'shared/header.php'
             <div class="item item-green">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
                 <div class="item-details">
-                    <h3 class="item-title"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
+                    <h3 class="item-title text-success"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
                         <div>Delete</div>
@@ -40,11 +40,10 @@ include_once 'shared/header.php'
                 </div>
             </div>
         <?php
-
                 }
         ?>
     </section>
-
+    <script src="js/main.js"></script>
 </main>
 </div>
 <?php

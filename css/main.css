@@ -141,8 +141,10 @@ main {
     font-family: 'Open Sans Condensed', sans-serif;
     font-size: 1.875em;
     margin: 0.5em 0em;
-    border-bottom: 1px solid #E9E9E7;
     cursor: pointer;
+}
+.item-title-main {
+    border-bottom: 1px solid #E9E9E7;
 }
 .item-time {
     margin-top: 0;
