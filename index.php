@@ -6,7 +6,7 @@ include_once 'shared/sidebar.php';
 // if ($_SESSION['logged-in'] === true) {
 
 $_SESSION['userId'] = 1;
-require_once 'read.php';
+require_once 'process-read-userfood.php';
 
 ?>
 <div id="main-container">
