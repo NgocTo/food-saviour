@@ -19,3 +19,9 @@ function showItemOptions(e) {
     var elem = e.target.nextElementSibling;
     elem.classList.toggle("hide");
 }
+// settings
+var settingBtn = document.getElementById("setting-btn");
+settingBtn.addEventListener("click", showSettings, false);
+function showSettings(e) {
+    settingBtn.children[2].classList.toggle("hide");
+}

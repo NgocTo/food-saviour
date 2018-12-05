@@ -17,6 +17,7 @@ header {
 }
 #header-nav {
     display: inline-block;
+    position: relative;
 }
 #header-nav li {
     display: inline-block;
@@ -24,6 +25,24 @@ header {
 }
 #header-nav a:hover {
     text-decoration: none;
+}
+#dropdownlist {
+    background-color: #ffffff;
+    z-index: 1;
+    position: absolute;
+    right: 0;
+    top: 2rem;
+    text-align: right;
+    border-radius: 4px;
+}
+#dropdownlist li {
+    display: block;
+}
+#dropdownlist li:nth-child(n+2) {
+    border-top: 1px solid #E9E9E7;
+}
+#dropdownlist li:hover {
+    background-color: #C4EF7B;
 }
 /* SIDEBAR STYLING */
 aside {
