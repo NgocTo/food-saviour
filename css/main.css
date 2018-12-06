@@ -311,7 +311,7 @@ main {
     text-align: center;
 }
 
-/* GROCERY LIST */
+/* GROCERY STORE */
 .grocery-table {
     width: 100%;
     margin-top: 1em;
@@ -334,8 +334,13 @@ main {
 }
 
 /* SETTINGS */
+.form-padding {
+    padding-left: 1em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
 
-.settings-padding {
+.about-padding {
     padding-left: 1em;
     padding-bottom: 0.5em;
 }

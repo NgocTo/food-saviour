@@ -2,7 +2,7 @@
 session_start();
 $style = "css/main.css";
 include_once 'shared/head.php';
-include_once 'shared/sidebar.php';
+include_once 'shared/sidebar-settings.php';
 if ($_SESSION['logged-in'] === true) {
     $userId = $_SESSION['id'];
 ?>
@@ -12,7 +12,7 @@ include_once 'shared/header.php'
 ?>
 
 <main class="text-dark">
-    <h1 class="text-green settings-padding">About Us</h1>
+    <h1 class="text-green about-padding">About Us</h1>
     <div class="about-container">
         <section class="about">
             <h2 class="text-green">Breakfast Club</h2>
@@ -27,7 +27,7 @@ include_once 'shared/header.php'
             <a href="mailto:info@breakfastclub.com">info@breakfastclub.com</a>
         </section>
     </div>
-    <h1 class="text-green settings-padding">Members</h1>
+    <h1 class="text-green about-padding">Members</h1>
     <div class="member-container">
         <section class="member">
             <img src="img/katie-carson.jpg" alt="Katie Carson Photo" class="img-responsive">
