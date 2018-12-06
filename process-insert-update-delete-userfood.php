@@ -13,7 +13,7 @@ $stmt->execute();
 $row = $stmt->fetch();
 
 if ($row == NULL){
-    $foodId = 14;}
+    $foodId = 14;} //if the item cannot be found, it is a custom item
 
  //on clicking a button, you pass in a variable
  //0 == add, 1 == edit, 2 == delete
