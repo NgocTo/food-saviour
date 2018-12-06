@@ -1,6 +1,6 @@
 <aside>
     <h2 class="hidden">Sidebar</h2>
-    <img src="<?= ROOT_URI ?>img/logo.png" id="logo" alt="food saviour logo" />
+    <a href="<?= ROOT_URI ?>"><img src="<?= ROOT_URI ?>img/logo.png" id="logo" alt="food saviour logo" /></a>
     <div>
         <label for="add-search" class="hidden">Add new item: </label>
         <input type="text" id="add-search" name="add-search" placeholder="Quick Entry" class="inputbox"/>
