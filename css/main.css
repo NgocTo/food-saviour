@@ -334,6 +334,12 @@ main {
 }
 
 /* SETTINGS */
+
+.settings-padding {
+    padding-left: 1em;
+    padding-bottom: 0.5em;
+}
+
 .about-container {
     margin: 0 auto;
     align-items: center;
@@ -372,7 +378,7 @@ main {
 .member {
     background-color: #ffffff;
     width: 20%;
-    min-height: 300px;
+    min-height: 650px;
     max-height: 100%;
     margin-left: 1em;
     margin-right: 1em;
@@ -380,4 +386,9 @@ main {
     padding: 1em;
     display: inline-block;
     vertical-align: top;
+}
+
+.img-responsive {
+    width: 100%;
+    height: auto;
 }
