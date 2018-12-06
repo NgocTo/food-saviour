@@ -332,3 +332,52 @@ main {
 #grocery-search input {
     width: 95%;
 }
+
+/* SETTINGS */
+.about-container {
+    margin: 0 auto;
+    align-items: center;
+}
+
+.about {
+    background-color: #ffffff;
+    width: 70%;
+    min-height: 270px;
+    max-height: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.contact {
+    background-color: #ffffff;
+    width: 20%;
+    min-height: 270px;
+    max-height: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.member-container {
+    margin: 0 auto;
+}
+
+.member {
+    background-color: #ffffff;
+    width: 20%;
+    min-height: 300px;
+    max-height: 100%;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 1em;
+    padding: 1em;
+    display: inline-block;
+    vertical-align: top;
+}
