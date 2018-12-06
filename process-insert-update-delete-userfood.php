@@ -5,6 +5,7 @@ $userId = $_POST['userId'];
 $customFoodName = $_POST['customFoodName'];
 $customDuration = $_POST['customDuration'];
 $customAmount = $_POST['customAmount'];
+$customFoodName = $_POST['customFoodName'];
 $action = $_POST ['action'];
 
 $stmt = $pdo->prepare("SELECT * FROM `food` WHERE `foodName` LIKE '$customFoodName'");
@@ -35,11 +36,11 @@ if ($action === 0) {
 }else if ($action === 1) {
 
     $stmt = $pdo->prepare("UPDATE `userfood` SET `foodId` = '$foodId', `customFoodName` = '$customFoodName',
-    `customDuration` = '$customDuration', `customAmount` = '$customAmount' WHERE `foodId` = '$foodId' AND `userId` = '$userId'");
+    `customDuration` = '$customDuration', `customAmount` = '$customAmount' WHERE `foodId` = '$foodId' AND `userId` = '$userId' AND `customFoodName` = '$customFoodName'");
 
 }else if ($action === 2) {
 
-    $stmt = $pdo->prepare("DELETE FROM `userfood` WHERE  `foodId` = '$foodId' AND `userId` = '$userId'");
+    $stmt = $pdo->prepare("DELETE FROM `userfood` WHERE `foodId` = '$foodId' AND `userId` = '$userId' AND `customFoodName` = '$customFoodName'");
 
 };
 $stmt->execute();
