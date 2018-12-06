@@ -6,6 +6,7 @@ include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
     $userId = $_SESSION['id'];
     require_once 'process-read-userfood.php';
+    require_once 'process-notifications.php';
 ?>
 <div id="main-container">
 <?php
@@ -23,6 +24,25 @@ include_once 'shared/header.php'
         <button class="btn-grey">Go</button>
     </form>
     <hr />
+    <section>
+        <?php
+        foreach($durations as $row) {
+            $dateAdded = strtotime($row["date"]);
+            $dateDiffNum = $today - $dateAdded;
+            $dateDiff = floor($dateDiffNum / (60 * 60 * 24));
+            $duration = ($row["customDuration"])? $row["duration"] : $row["customDuration"];
+            $expireDate = $duration - $dateDiff;
+            if (($expireDate < 2) && ($expireDate >= 0)) {
+        ?>
+        <div class="text-danger">
+            <?= ($row["customFoodName"] === null)? $row["foodName"] : $row["customFoodName"] ?> is expiring soon!
+            <a href="https://www.allrecipes.com/search/results/?wt=<?= ($row["customFoodName"] === null)? $row["foodName"] : $row["customFoodName"] ?>" target="_blank" class="text-danger">Check out recipe ideas here.</a>
+        </div>
+        <?php
+            }
+        }
+        ?>
+    </section>
     <section>
         <h2 class="text-green">This week</h2>
             <?php
