@@ -2,7 +2,7 @@
 require_once('database.php');
 $foodId = $_POST['foodId'];
 $userId = $_POST['userId'];
-$customFoodName = $_POST['customFoodName'];
+$foodName = $_POST['foodName'];
 $customDuration = $_POST['customDuration'];
 $customAmount = $_POST['customAmount'];
 $customFoodName = $_POST['customFoodName'];
@@ -14,18 +14,18 @@ $stmt->execute();
 $row = $stmt->fetch();
 
 if ($row == NULL){
-    $foodId = 14;} //if the item cannot be found, it is a custom item
+    $foodId = 14;} // if the item cannot be found, it is a custom item
 
- //on clicking a button, you pass in a variable
- //0 == add, 1 == edit, 2 == delete
+ // on clicking a button, you pass in a variable
+ // 0 == add, 1 == edit, 2 == delete
 
-//if you click add and they already have one, the action gets changed to an update action
+// if you click add and they already have one, the action gets changed to an update action
 if ($action !== 2) {
     $stmt = $pdo->prepare("SELECT * FROM `userfood` WHERE `customFoodName` LIKE '$customFoodName'");
     $stmt->execute();
 
-    $row = $stmt->fetch();
-    if ($row > 0) {$action === 1}
+    // $row = $stmt->fetch();
+    // if ($row > 0) {$action === 1}
 
 }
 if ($action === 0) {

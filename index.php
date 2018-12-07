@@ -45,7 +45,7 @@ include_once 'shared/header.php'
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
                     $expireDate = calculateExpiryDate($row["date"], $duration);
-                    if (($expireDate < 7) && ($item["foodState"] === null)) {
+                    if (($expireDate >= 0) && ($expireDate < 7) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-red">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
@@ -53,7 +53,7 @@ include_once 'shared/header.php'
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
-                        <div>Delete</div>
+                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -90,7 +90,7 @@ include_once 'shared/header.php'
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
-                        <div>Delete</div>
+                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate  ?> day(s) left</p>
                 </div>
@@ -127,7 +127,7 @@ include_once 'shared/header.php'
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
                         <div>Edit</div>
-                        <div>Delete</div>
+                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -150,20 +150,21 @@ include_once 'shared/header.php'
     </section>
     <hr />
     <!--add food pop-up form-->
-    <div class="form-popup hide bg-white" id= "addfood">
-        <form action="/action_page.php" class="form-container">
+    <div class="form-popup hide bg-white" id="addfood">
+        <form action="process-add-userfood.php" method="post" class="form-container">
         <h3>Quick Entry:</h3>
+        <div>If you are adding a common food, please leave duration and amount empty to get the default.</div>
         <div>
         <label for="foodName"><b>Food Name</b></label>
         <input type="text" id="foodName" name="foodName" required>
         </div>
         <div>
         <label for="customDuration"><b>Duration</b></label>
-        <input type="number" placeholder="5" name="customDuration" required> <span>date(s)</span>
+        <input type="number" name="customDuration"> <span>date(s)</span>
     </div>
         <div>
         <label for="customAmount"><b>Amount</b></label>
-        <input type="number" placeholder="1" name="customAmount" required>
+        <input type="number" name="customAmount">
         </div>
         <button type="submit" class="btn">Add</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
