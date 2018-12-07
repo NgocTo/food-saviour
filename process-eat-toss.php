@@ -1,5 +1,4 @@
 <?php
-
 require_once('database.php');
 $userId = $_POST ['userId'];
 $foodId = $_POST['foodId'];
