@@ -5,7 +5,7 @@ include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
     $userId = $_SESSION['id'];
-    require_once 'process-read-eat.php';
+    require_once 'process-read-userfood.php';
 ?>
 <div id="main-container">
 <?php
@@ -26,6 +26,7 @@ include_once 'shared/header.php'
     <section>
             <?php
                 foreach ($results as $item) {
+                    if ($item["foodState"] === "eat") {
             ?>
             <div class="item item-green">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
@@ -38,6 +39,7 @@ include_once 'shared/header.php'
                 </div>
             </div>
         <?php
+                    }
                 }
         ?>
     </section>

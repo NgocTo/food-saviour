@@ -5,7 +5,7 @@ include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
     $userId = $_SESSION['id'];
-    require_once 'process-read-toss.php';
+    require_once 'process-read-userfood.php';
 ?>
 <div id="main-container">
 <?php
@@ -26,6 +26,9 @@ include_once 'shared/header.php'
     <section>
             <?php
                 foreach ($results as $item) {
+                    $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    $expireDate = calculateExpiryDate($item["date"], $duration);
+                    if(($expireDate < 0) || ($item["foodState"] === "toss")) {
             ?>
             <div class="item item-red">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
@@ -38,6 +41,7 @@ include_once 'shared/header.php'
                 </div>
             </div>
         <?php
+                    }
                 }
         ?>
     </section>
