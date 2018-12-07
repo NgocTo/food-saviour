@@ -6,7 +6,6 @@ include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
     $userId = $_SESSION['id'];
     require_once 'process-read-userfood.php';
-    require_once 'process-notifications.php';
 ?>
 <div id="main-container">
 <?php
@@ -26,17 +25,14 @@ include_once 'shared/header.php'
     <hr />
     <section>
         <?php
-        foreach($durations as $row) {
-            $dateAdded = strtotime($row["date"]);
-            $dateDiffNum = $today - $dateAdded;
-            $dateDiff = floor($dateDiffNum / (60 * 60 * 24));
-            $duration = ($row["customDuration"])? $row["duration"] : $row["customDuration"];
-            $expireDate = $duration - $dateDiff;
+        foreach($results as $row) {
+            $duration = ($row["customDuration"])? $row["customDuration"] : $row["duration"];
+            $expireDate = calculateExpiryDate($row["date"], $duration);
             if (($expireDate < 2) && ($expireDate >= 0)) {
         ?>
         <div class="text-danger">
-            <?= ($row["customFoodName"] === null)? $row["foodName"] : $row["customFoodName"] ?> is expiring soon!
-            <a href="https://www.allrecipes.com/search/results/?wt=<?= ($row["customFoodName"] === null)? $row["foodName"] : $row["customFoodName"] ?>" target="_blank" class="text-danger">Check out recipe ideas here.</a>
+            <?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?> is expiring soon!
+            <a href="https://www.allrecipes.com/search/results/?wt=<?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?>" target="_blank" class="text-danger">Check out recipe ideas here.</a>
         </div>
         <?php
             }
@@ -48,7 +44,8 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
-                    if ($duration < 7) {
+                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    if (($expireDate < 7) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-red">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
@@ -58,7 +55,7 @@ include_once 'shared/header.php'
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $duration ?> day(s) left</p>
+                    <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
@@ -84,7 +81,8 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
-                    if (($duration  >= 7) && ($duration  < 30)) {
+                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    if (($expireDate  >= 7) && ($expireDate  < 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-yellow">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-yellow">
@@ -94,7 +92,7 @@ include_once 'shared/header.php'
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $duration  ?> day(s) left</p>
+                    <p class="item-time"><?= $expireDate  ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
@@ -120,7 +118,8 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
-                    if ($duration >= 30) {
+                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    if (($expireDate >= 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-green">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
@@ -130,7 +129,7 @@ include_once 'shared/header.php'
                         <div>Edit</div>
                         <div>Delete</div>
                     </div>
-                    <p class="item-time"><?= $duration ?> day(s) left</p>
+                    <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
                 <div class="item-action">
                     <button class="btn-grey item-action-btn">Action</button>
