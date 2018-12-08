@@ -1,3 +1,4 @@
+// food search
 var searchContainer = document.getElementById("searchContainer");
 var searchFood = document.getElementById("add-search");
 searchFood.addEventListener('input', searchFoodFunction, false);
@@ -25,9 +26,11 @@ function searchFoodFunction(e){
     }
 
 
-    myRequest.open("GET", url, true); //true means it is asynchronous // Send urls through the url
+    myRequest.open("GET", url, true); // true means it is asynchronous // send urls through the url
     myRequest.send(null);
 }
+
+// quick entry 
 var addBtn = document.getElementById("add-btn");
 addBtn.addEventListener("click", showAddFood, false);
 function showAddFood() {
