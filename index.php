@@ -4,7 +4,7 @@ $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
-    $userId = $_SESSION['id'];
+    $userId = $_SESSION['1'];
     require_once 'process-read-userfood.php';
 ?>
 <div id="main-container">
@@ -52,8 +52,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div>Edit</div>
-                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -89,8 +89,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div>Edit</div>
-                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate  ?> day(s) left</p>
                 </div>
@@ -126,8 +126,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div>Edit</div>
-                        <div><a href="process-delete.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -167,6 +167,26 @@ include_once 'shared/header.php'
         <input type="number" name="customAmount">
         </div>
         <button type="submit" class="btn">Add</button>
+        <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+        </form>
+    </div>
+    <!--edit food pop-up form-->
+    <div class="form-popup hide bg-white" id="editfood">
+        <form action="process-edit-userfood.php" method="post" class="form-container">
+        <h3>Edit Entry:</h3>
+        <div>
+        <label for="foodName"><b>Food Name</b></label>
+        <input type="text" id="foodName" name="foodName" required>
+        </div>
+        <div>
+        <label for="customDuration"><b>Duration</b></label>
+        <input type="number" name="customDuration"> <span>date(s)</span>
+    </div>
+        <div>
+        <label for="customAmount"><b>Amount</b></label>
+        <input type="number" name="customAmount">
+        </div>
+        <button type="submit" class="btn">Edit</button>
         <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
         </form>
     </div>

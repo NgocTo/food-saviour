@@ -9,6 +9,7 @@ function showOptions(e) {
     var elem = e.target.nextElementSibling;
     elem.classList.toggle("hide");
 }
+
 // action edit/delete
 var itemBtn = document.getElementsByClassName("item-title");
 for (var i = 0; i < actionBtn.length; i++) {
@@ -19,9 +20,22 @@ function showItemOptions(e) {
     var elem = e.target.nextElementSibling;
     elem.classList.toggle("hide");
 }
+
 // settings
 var settingBtn = document.getElementById("setting-btn");
 settingBtn.addEventListener("click", showSettings, false);
 function showSettings(e) {
     settingBtn.children[2].classList.toggle("hide");
+}
+
+// edit entry
+var editBtn = document.getElementById("edit-btn");
+editBtn.addEventListener("click", showEditFood, false);
+function showEditFood() {
+    var x = document.getElementById("editfood");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        document.getElementById("editfood").style.display="block";
+    }
 }
