@@ -4,7 +4,7 @@ $style = "css/main.css";
 include_once 'shared/head.php';
 include_once 'shared/sidebar.php';
 if ($_SESSION['logged-in'] === true) {
-    $userId = $_SESSION['1'];
+    $userId = $_SESSION['id'];
     require_once 'process-read-userfood.php';
 ?>
 <div id="main-container">
@@ -28,7 +28,7 @@ include_once 'shared/header.php'
         foreach($results as $row) {
             $duration = ($row["customDuration"])? $row["customDuration"] : $row["duration"];
             $expireDate = calculateExpiryDate($row["date"], $duration);
-            if (($expireDate < 2) && ($expireDate >= 0)) {
+            if (($expireDate < 2) && ($expireDate >= 0) && ($row["foodState"] === null)) {
         ?>
         <div class="text-danger">
             <?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?> is expiring soon!
