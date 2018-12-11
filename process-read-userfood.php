@@ -13,7 +13,7 @@ function calculateExpiryDate($dateAdded, $duration) {
     $today = $date->getTimestamp();
     $dateAddedNum = strtotime($dateAdded);
     $dateDiffNum = $today - $dateAddedNum;
-    $dateDiff = floor($dateDiffNum / (60 * 60 * 24));
+    $dateDiff = floor($dateDiffNum / (60 * 60 * 24)) + 1;
     return $expireDate = $duration - $dateDiff;
 }
 ?>
