@@ -1,6 +1,7 @@
 <?php
 session_start();
 require_once('database.php');
+$id = $_POST['id'];
 $userId = $_SESSION['id'];
 $foodName = $_POST['foodName'];
 $customDuration = ($_POST['customDuration'])? $_POST['customDuration'] : null;
@@ -16,5 +17,5 @@ if($row) {
     VALUES ('$userId', '$foodId', '$customDuration', '$customAmount')");
 }
 $stmt->execute();
-header("Location: index.php");
+header("Location: grocery-store.php");
 ?>

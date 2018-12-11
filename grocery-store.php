@@ -18,7 +18,7 @@ include_once 'shared/header.php';
         <select id="sort" name="sort" class="pulldownbox">
             <option value="name">Name</option>
             <option value="category">Category</option>
-            <option value="expiry">Date Expired</option>
+            <option value="expiry">Expiry Date</option>
         </select>
         <button class="btn-green">Go</button>
     </form>
@@ -36,7 +36,8 @@ include_once 'shared/header.php';
                 <th class="text-green">Category</th>
                 <th class="text-green">Amount</th>
                 <th class="text-green">Date Bought</th>
-                <th class="text-green">Date Expired</th>
+                <th class="text-green">Days to Expiry</th>
+                <th class="text-green">Add Item</th>
             </tr>
         </thead>
         <tbody>
@@ -68,6 +69,7 @@ include_once 'shared/header.php';
                     </form>
                 </td>
                 <td><?= $row["duration"] ?></td>
+                <td><a href="process-add-userfood-grocery.php?id=<?= $row['id'] ?>">+</a>
             </tr>
             <?php } ?>
         </tbody>
