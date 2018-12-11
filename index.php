@@ -52,7 +52,7 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-read-userfood-by-id.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
                         <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
@@ -89,7 +89,7 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-read-userfood-by-id?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
                         <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate  ?> day(s) left</p>
@@ -126,7 +126,7 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div><a href="process-edit-userfood.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
+                        <div><a href="process-read-userfood-by-id.php?id=<?= $item['userFoodId'] ?>" id="edit-btn">Edit</a></div>
                         <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
@@ -176,7 +176,7 @@ include_once 'shared/header.php'
         <h3>Edit Entry:</h3>
         <div>
         <label for="foodName"><b>Food Name</b></label>
-        <input type="text" id="foodName" name="foodName" required>
+        <input type="text" id="foodName" name="foodName" value="<?= $itemById['foodName'] ?>" required>
         </div>
         <div>
         <label for="customDuration"><b>Duration</b></label>

@@ -19,6 +19,6 @@ if($row) {
     $stmt = $pdo->prepare("UPDATE `userfood` SET `customFoodName` = '$customFoodName', `customDuration` = '$customDuration', `customAmount` = '$customAmount' WHERE `id` = '$id' AND `userId` = '$userId'");
 }
 
-$stmt->execute();
-header("Location: index.php");
+// $stmt->execute();
+// header("Location: index.php");
 ?>
