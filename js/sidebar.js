@@ -1,8 +1,9 @@
 // food search
+// so the dropdown doesn't get too long should we set limit on how many results show?
+// also not sure why it stopped working I didn't make any changes to this section 
 var searchContainer = document.getElementById("searchContainer");
 var searchFood = document.getElementById("add-search");
 searchFood.addEventListener('input', searchFoodFunction, false);
-
 function searchFoodFunction(e){
     searchContainer.innerHTML = '';
     var searchFoodVal = searchFood.value;
@@ -19,25 +20,30 @@ function searchFoodFunction(e){
     		}
     	}
     };
-
     if(searchFoodVal.length < 1){
     	results.style.display='none';
     	return;
     }
-
-
-    myRequest.open("GET", url, true); // true means it is asynchronous // send urls through the url
+    myRequest.open("GET", url, true);
     myRequest.send(null);
 }
 
-// quick entry 
+// quick entry
+// id="addfood" // the popup form
+// id="foodName" // empty input field that needs to be filled in
+// id="add-search" // quick entry search input
+// id="add-btn" // button to search
+var popup = document.getElementById("addfood");
+var popupValue = document.getElementById("foodName");
+var quickEntry = document.getElementById("add-search");
+var quickEntryValue = quickEntry.getAttribute("value");
 var addBtn = document.getElementById("add-btn");
 addBtn.addEventListener("click", showAddFood, false);
 function showAddFood() {
-    var x = document.getElementById("addfood");
-    if (x.style.display === "none") {
-        x.style.display = "block";
+    if (popup.style.display === "none") {
+        popup.style.display = "block";
+        popupValue.setAttribute("value", quickEntryValue);
     } else {
-        document.getElementById("addfood").style.display="block";
+        popup.style.display = "block";
     }
 }
