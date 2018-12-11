@@ -6,12 +6,12 @@ $foodName = $_POST['foodName'];
 $customDuration = ($_POST['customDuration'])? $_POST['customDuration'] : null;
 $customAmount = ($_POST['customAmount'])? $_POST['customAmount'] : null;
 
-$stmt = $pdo->prepare("SELECT * FROM `userfood` JOIN `food` ON `userfood`.`foodId` = `food`.`id` WHERE LOWER(`food`.`foodName`) = LOWER('$foodName')");
+$stmt = $pdo->prepare("SELECT * FROM `food` WHERE LOWER(`foodName`) = LOWER('$foodName')");
 $stmt->execute();
 $row = $stmt->fetch();
-
+var_dump($row);
 if($row) {
-    $foodId = $row['foodId'];
+    $foodId = $row['id'];
     $stmt = $pdo->prepare("INSERT INTO `userfood`(`userId`, `foodId`, `customDuration`, `customAmount`)
     VALUES ('$userId', '$foodId', '$customDuration', '$customAmount')");
 } else {
