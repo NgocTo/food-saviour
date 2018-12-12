@@ -13,8 +13,8 @@ $row = $stmt->fetch();
 var_dump($row);
 if($row) {
     $foodId = $row['id'];
-    $stmt = $pdo->prepare("INSERT INTO `userfood`(`userId`, `foodId`, `customDuration`, `customAmount`)
-    VALUES ('$userId', '$foodId', '$customDuration', '$customAmount')");
+    $stmt = $pdo->prepare("INSERT INTO `userfood`(`userId`, `foodId`, `customAmount`)
+    VALUES ('$userId', '$foodId', '$customAmount')");
 }
 $stmt->execute();
 header("Location: grocery-store.php");
