@@ -36,7 +36,7 @@ include_once 'shared/header.php';
                 <th class="text-green">Category</th>
                 <th class="text-green">Amount</th>
                 <th class="text-green">Date Bought</th>
-                <th class="text-green">Days to Expiry</th>
+                <th class="text-green">Duration</th>
                 <th class="text-green">Add Item</th>
             </tr>
         </thead>
@@ -44,12 +44,13 @@ include_once 'shared/header.php';
             <?php
             foreach($food as $row) {
             ?>
-            <tr>
-                <td><?= $row["foodName"] ?></td>
-                <td><?= $row["category"] ?></td>
-                <td>
-                    <form action="" method="post" id="userAddFood">
-                        <select name="amount[]" id="<?php $row['foodkey'] ?>" class="pulldownbox">
+            <form action="process-add-userfood-grocery.php" method="post" >
+                <input type="hidden" name="foodkey" id="foodkey" value=<?= $row['foodkey'] ?> />
+                <tr>
+                    <td><?= $row["foodName"] ?></td>
+                    <td><?= $row["category"] ?></td>
+                    <td>
+                        <select name="customAmount" id="customAmount">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -61,17 +62,16 @@ include_once 'shared/header.php';
                             <option value="9">9</option>
                             <option value="10">10</option>
                         </select>
-                    </form>
-                </td>
-                <td>
-                    <form action="" method="post" id="userAddDate">
-                        <input name="dateBought[]" id="<?php $row['foodkey'] ?>" class="pulldownbox" type="date" value="<?= date("Y-m-d") ?>">
-                    </form>
-                </td>
-                <td><?= $row["duration"] ?></td>
-                <td><a id = "add" href="process-add-userfood-grocery.php?id=<?php echo $row["foodkey"]?>;foodName=<?php echo $row["foodName"]?>;customAmount=amount[<?php echo $row["foodkey"]?>];dateBought=[<?php echo $row["foodkey"]?>]">+</a></td>
-                <td><?= $row["foodkey"] ?></td>
-            </tr>
+                    </td>
+                    <td>
+                        <input name="dateBought" id="dateBought" type="date" value="<?= date("Y-m-d") ?>">
+                    </td>
+                    <td>
+                        <input name="customDuration" id="customDuration" type="text" value="<?= $row["duration"] ?>">
+                    </td>
+                    <td><button class="btn-outline" name="button">+</button></td>
+                </tr>
+            </form>
             <?php } ?>
         </tbody>
     </table>
