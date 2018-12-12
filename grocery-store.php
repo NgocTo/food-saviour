@@ -27,7 +27,7 @@ include_once 'shared/header.php';
 
     <form action="" method="post" id="grocery-search">
         <input type="text" placeholder="Search food in grocery list..." />
-        <button>Search</button>
+        <button class="btn-green">Search</button>
     </form>
     <table class="grocery-table">
         <thead>
@@ -49,7 +49,7 @@ include_once 'shared/header.php';
                 <td><?= $row["category"] ?></td>
                 <td>
                     <form action="" method="post" id="userAddFood">
-                        <select name="amount" class="pulldownbox">
+                        <select name="amount[]" id="<?php $row['foodkey'] ?>" class="pulldownbox">
                             <option value="1">1</option>
                             <option value="2">2</option>
                             <option value="3">3</option>
@@ -65,11 +65,12 @@ include_once 'shared/header.php';
                 </td>
                 <td>
                     <form action="" method="post" id="userAddDate">
-                        <input name="dateBought" class="pulldownbox" type="date" value="<?= date("Y-m-d") ?>">
+                        <input name="dateBought[]" id="<?php $row['foodkey'] ?>" class="pulldownbox" type="date" value="<?= date("Y-m-d") ?>">
                     </form>
                 </td>
                 <td><?= $row["duration"] ?></td>
-                <td><a href="process-add-userfood-grocery.php?id=<?= $row['id'] ?>">+</a>
+                <td><a id = "add" href="process-add-userfood-grocery.php?id=<?php echo $row["foodkey"]?>;foodName=<?php echo $row["foodName"]?>;customAmount=amount[<?php echo $row["foodkey"]?>];dateBought=[<?php echo $row["foodkey"]?>]">+</a></td>
+                <td><?= $row["foodkey"] ?></td>
             </tr>
             <?php } ?>
         </tbody>
