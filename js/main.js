@@ -38,6 +38,7 @@ function showEditPopup(foodId) {
             console.log(results);
             var id = document.getElementById("edit-id");
             var foodName = document.getElementById("edit-foodName");
+            var dateBought = document.getElementById("edit-dateBought");
             var customDuration = document.getElementById("edit-customDuration");
             var customAmount = document.getElementById("edit-customAmount");
             var foodNameValue;
@@ -58,9 +59,9 @@ function showEditPopup(foodId) {
             } else {
                 customAmountValue = 1;
             }
-            console.log(foodNameValue);
             id.value = results[0];
             foodName.value = foodNameValue;
+            dateBought.value = results.date;
             customDuration.value = customDurationValue;
             customAmount.value = customAmountValue;
         }

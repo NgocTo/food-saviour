@@ -54,30 +54,3 @@
         </div>
     </form>
 </div>
-<!--edit food pop-up form-->
-<div class="form-popup hide bg-white" id="editfood">
-    <form action="process-edit-userfood.php" method="post" class="form-container">
-        <h2 class="popup-title text-green text-center">Edit Entry</h2>
-        <input type="hidden" id="edit-id" name="edit-id" />
-        <div class="form-inputs">
-            <label for="edit-foodName"><b>Food Name</b></label>
-            <input type="text" id="edit-foodName" name="edit-foodName" required>
-        </div>
-        <div class="form-inputs">
-            <label for="edit-dateBought"><b>Date Bought</b></label>
-            <input name="edit-dateBought" id="edit-dateBought" type="date" value="<?= date("Y-m-d") ?>">
-        </div>
-        <div class="form-inputs">
-            <label for="edit-customDuration"><b>Duration</b></label>
-            <input type="text" id="edit-customDuration" name="edit-customDuration"> <span>date(s)</span>
-        </div>
-        <div class="form-inputs">
-            <label for="edit-customAmount"><b>Amount</b></label>
-            <input type="text" id="edit-customAmount" name="edit-customAmount">
-        </div>
-        <div class="popup-group-btn">
-            <button type="submit" class="btn-outline popup-btn">Edit</button>
-            <div class="btn-outline popup-btn" onclick="closeEditForm()">Close</div>
-        </div>
-    </form>
-</div>

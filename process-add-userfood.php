@@ -11,7 +11,6 @@ $customAmount = ($customAmountPost != "")? "$customAmountPost" : "null";
 $stmt = $pdo->prepare("SELECT * FROM `food` WHERE LOWER(`foodName`) = LOWER('$foodName')");
 $stmt->execute();
 $row = $stmt->fetch();
-var_dump($dateBought);
 if($row) {
     $foodId = $row['id'];
     $stmt = $pdo->prepare("INSERT INTO `userfood`(`userId`, `foodId`, `date`, `customDuration`, `customAmount`)
@@ -23,5 +22,5 @@ if($row) {
 }
 $count = $stmt->execute();
 echo $count;
-// header("Location: index.php");
+header("Location: index.php");
 ?>
