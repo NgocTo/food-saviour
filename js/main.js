@@ -1,4 +1,4 @@
-// action eat/toss
+// ACTION EAT/TOSS
 console.log('mainjs');
 var actionBtn = document.getElementsByClassName("item-action-btn");
 for (var i = 0; i < actionBtn.length; i++) {
@@ -10,7 +10,7 @@ function showOptions(e) {
     elem.classList.toggle("hide");
 }
 
-// action edit/delete
+// ACTION EDIT/DELETE
 var itemBtn = document.getElementsByClassName("item-title");
 for (var i = 0; i < actionBtn.length; i++) {
     itemBtn[i].addEventListener("click", showItemOptions, false);
@@ -21,7 +21,7 @@ function showItemOptions(e) {
     elem.classList.toggle("hide");
 }
 
-// edit entry
+// EDIT POPUP
 function showEditPopup(foodId) {
     var x = document.getElementById("editfood");
     if (x.style.display === "none") {
@@ -69,8 +69,8 @@ function showEditPopup(foodId) {
     myRequest.send(null);
 }
 
-// CLOSE POP UP
+// CLOSE EDIT POPUP
 function closeForm() {
-    var popup = document.getElementById("addfood");
+    var popup = document.getElementById("editfood");
     popup.style.display = "none";
 }
