@@ -21,13 +21,6 @@ function showItemOptions(e) {
     elem.classList.toggle("hide");
 }
 
-// settings
-var settingBtn = document.getElementById("setting-btn");
-settingBtn.addEventListener("click", showSettings, false);
-function showSettings(e) {
-    settingBtn.children[2].classList.toggle("hide");
-}
-
 // edit entry
 var editBtn = document.getElementById("edit-btn");
 editBtn.addEventListener("click", showEditFood, false);
