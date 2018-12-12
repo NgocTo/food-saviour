@@ -177,7 +177,7 @@ main {
 }
 .item-options {
     position: absolute;
-    bottom: -1.8em;
+    bottom: -2em;
     left: 0;
     width: 100%;
     background-color: #fff;
@@ -302,6 +302,31 @@ main {
     top: 40vh;
     border: 3px solid #f1f1f1;
     z-index: 9;
+    padding: 1rem;
+}
+
+.form-inputs {
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+.popup-title {
+    font-size: 1.5em;
+}
+.popup-group-btn {
+    text-align: right;
+}
+.popup-btn {
+    font-size: 1em;
+    display: inline-block;
+    text-align: center;
+    line-height: 1.5em;
+    border-radius: 4px;
+}
+
+.link-imitate {
+    color: #256100;
+    text-decoration: underline;
+    cursor: pointer;
 }
 
 

@@ -76,6 +76,8 @@ include_once 'shared/header.php';
         </tbody>
     </table>
 </main>
+
+<script src="js/main.js"></script>
 </div>
 <?php
 include_once 'shared/footer.php';

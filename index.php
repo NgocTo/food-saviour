@@ -52,8 +52,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)">Edit</div>
-                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
+                        <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -89,8 +89,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)">Edit</div>
-                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
+                        <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate  ?> day(s) left</p>
                 </div>
@@ -126,8 +126,8 @@ include_once 'shared/header.php'
                 <div class="item-details">
                     <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
                     <div class="hide item-options">
-                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)">Edit</div>
-                        <div><a href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
+                        <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
+                        <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
                     </div>
                     <p class="item-time"><?= $expireDate ?> day(s) left</p>
                 </div>
@@ -149,49 +149,7 @@ include_once 'shared/header.php'
         ?>
     </section>
     <hr />
-    <!--add food pop-up form-->
-    <div class="form-popup hide bg-white" id="addfood">
-        <form action="process-add-userfood.php" method="post" class="form-container">
-            <h3>Quick Entry:</h3>
-            <div>If you are adding a common food, please leave duration and amount empty to get the default.</div>
-            <div>
-                <label for="foodName"><b>Food Name</b></label>
-                <input type="text" id="foodName" name="foodName" placeholder="Enter food name..." required>
-            </div>
-            <div>
-                <label for="customDuration"><b>Duration</b></label>
-                <input type="text" placeholder="Enter custom duration..." name="customDuration"><span>date(s)</span>
-            </div>
-            <div>
-                <label for="customAmount"><b>Amount</b></label>
-                <input type="text" name="customAmount" placeholder="1">
-            </div>
-            <button type="submit" class="btn">Add</button>
-            <div class="btn" onclick="closeForm()">Close</div>
-        </form>
-    </div>
-    <!--edit food pop-up form-->
-    <div class="form-popup hide bg-white" id="editfood">
-        <form action="process-edit-userfood.php" method="post" class="form-container">
-            <h3>Edit Entry:</h3>
-            <input type="hidden" id="edit-id" name="edit-id" />
 
-            <div>
-                <label for="edit-foodName"><b>Food Name</b></label>
-                <input type="text" id="edit-foodName" name="edit-foodName" required>
-                </div>
-            <div>
-                <label for="edit-customDuration"><b>Duration</b></label>
-                <input type="text" id="edit-customDuration" name="edit-customDuration"> <span>date(s)</span>
-            </div>
-            <div>
-                <label for="edit-customAmount"><b>Amount</b></label>
-                <input type="text" id="edit-customAmount" name="edit-customAmount">
-            </div>
-            <button type="submit" class="btn">Edit</button>
-            <div class="btn" onclick="closeForm()">Close</div>
-        </form>
-    </div>
     <script src="js/main.js"></script>
 
 </main>

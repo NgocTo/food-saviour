@@ -1,4 +1,5 @@
-// food search
+console.log("sidebarjs");
+// FOOD SEARCH
 // so the dropdown doesn't get too long should we set limit on how many results show?
 // also not sure why it stopped working I didn't make any changes to this section
 var searchContainer = document.getElementById("searchContainer");
@@ -28,8 +29,7 @@ function searchFoodFunction(e){
     myRequest.send(null);
 }
 
-// OPEN POP UP
-
+// OPEN ADD POPUP
 var addBtn = document.getElementById("add-btn");
 addBtn.addEventListener("click", showAddFood, false);
 function showAddFood() {
@@ -41,7 +41,7 @@ function showAddFood() {
     }
 }
 
-// POPULATE ADD FORM
+// POPULATE ADD POPUP
 searchContainer.addEventListener("click", getFood);
 function getFood() {
     var li = searchContainer.querySelectorAll("li");
@@ -62,4 +62,10 @@ function getFood() {
         myRequest.open("GET", url, true);
         myRequest.send(null);
     }
+}
+
+// CLOSE ADD POPUP
+function closeAddForm() {
+    var popup = document.getElementById("addfood");
+    popup.style.display = "none";
 }

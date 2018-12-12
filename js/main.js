@@ -70,7 +70,7 @@ function showEditPopup(foodId) {
 }
 
 // CLOSE EDIT POPUP
-function closeForm() {
+function closeEditForm() {
     var popup = document.getElementById("editfood");
     popup.style.display = "none";
 }
