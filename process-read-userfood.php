@@ -9,6 +9,7 @@ $items->execute();
 $results = $items->fetchAll();
 
 function calculateExpiryDate($dateAdded, $duration) {
+    date_default_timezone_set('America/Toronto');
     $date = new DateTime();
     $today = $date->getTimestamp();
     $dateAddedNum = strtotime($dateAdded);

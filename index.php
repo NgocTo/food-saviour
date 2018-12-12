@@ -46,7 +46,7 @@ include_once 'shared/header.php'
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
                     $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
-                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    $expireDate = calculateExpiryDate($item["date"], $duration);
                     if (($expireDate >= 0) && ($expireDate < 7) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-red">
@@ -84,7 +84,7 @@ include_once 'shared/header.php'
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
                     $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
-                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    $expireDate = calculateExpiryDate($item["date"], $duration);
                     if (($expireDate  >= 7) && ($expireDate  < 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-yellow">
@@ -122,7 +122,7 @@ include_once 'shared/header.php'
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
                     $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
-                    $expireDate = calculateExpiryDate($row["date"], $duration);
+                    $expireDate = calculateExpiryDate($item["date"], $duration);
                     if (($expireDate >= 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-green">
@@ -175,7 +175,7 @@ include_once 'shared/header.php'
                 <input type="text" id="edit-customAmount" name="edit-customAmount">
             </div>
             <div class="popup-group-btn">
-                <button type="submit" class="btn-outline popup-btn">Edit</button>
+                <button type="submit" class="btn-outline popup-btn">Update</button>
                 <div class="btn-outline popup-btn" onclick="closeEditForm()">Close</div>
             </div>
         </form>

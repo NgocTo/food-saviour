@@ -41,12 +41,15 @@ function showAddFood() {
     }
 }
 
-// POPULATE ADD POPUP
+//POPULATE ADD POPUP
 searchContainer.addEventListener("click", getFood);
-function getFood() {
+function getFood(e) {
     var li = searchContainer.querySelectorAll("li");
     for (var i = 0; i < li.length; i++) {
-        var quickEntryFoodName = li[i].innerHTML;
+        var quickEntryFoodName;
+        if (e.target.innerHTML == li[i].innerHTML) {
+            quickEntryFoodName = li[i].innerHTML;
+        }
         var myRequest = new XMLHttpRequest;
         var url = 'process-read-food-by-name.php?quick-entry-food-name=' + quickEntryFoodName;
         myRequest.onreadystatechange = function(){

@@ -3,7 +3,7 @@
     <a href="<?= ROOT_URI ?>"><img src="<?= ROOT_URI ?>img/logo.png" id="logo" alt="food saviour logo" /></a>
     <div>
         <label for="add-search" class="hidden">Add new item: </label>
-        <input type="text" id="add-search" name="add-search" placeholder="Quick Entry" class="inputbox"/>
+        <input type="text" id="add-search" name="add-search" autocomplete="off" placeholder="Quick Entry" class="inputbox"/>
         <button id="add-btn" class="btn-grey"><i class="fas fa-plus"></i><span class="hidden">Add</span></button>
         <ul id="searchContainer">
         </ul>
