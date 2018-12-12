@@ -27,11 +27,12 @@ include_once 'shared/header.php'
         <?php
         foreach($results as $row) {
             $duration = ($row["customDuration"])? $row["customDuration"] : $row["duration"];
+            $amount = ($row["customAmount"] === null || $row["customAmount"] === 0)? "1" : $row["customAmount"];
             $expireDate = calculateExpiryDate($row["date"], $duration);
             if (($expireDate < 2) && ($expireDate >= 0) && ($row["foodState"] === null)) {
         ?>
         <div class="text-danger">
-            <?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?> is expiring soon!
+            <?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?> (x<?= $amount ?>) is expiring soon!
             <a href="https://www.allrecipes.com/search/results/?wt=<?= ($row["customFoodName"])? $row["customFoodName"] : $row["foodName"] ?>" target="_blank" class="text-danger">Check out recipe ideas here.</a>
         </div>
         <?php
@@ -44,13 +45,14 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
                     $expireDate = calculateExpiryDate($row["date"], $duration);
                     if (($expireDate >= 0) && ($expireDate < 7) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-red">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-red">
                 <div class="item-details">
-                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
+                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?> <span class="item-amount">(x<?= $amount ?>)</span></h3>
                     <div class="hide item-options">
                         <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
                         <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
@@ -81,13 +83,14 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
                     $expireDate = calculateExpiryDate($row["date"], $duration);
                     if (($expireDate  >= 7) && ($expireDate  < 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-yellow">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-yellow">
                 <div class="item-details">
-                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
+                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?> <span class="item-amount">(x<?= $amount ?>)</span></h3>
                     <div class="hide item-options">
                         <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
                         <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>
@@ -118,13 +121,14 @@ include_once 'shared/header.php'
             <?php
                 foreach ($results as $item) {
                     $duration = ($item["customDuration"])? $item["customDuration"] : $item["duration"];
+                    $amount = ($item["customAmount"] === null || $item["customAmount"] === 0)? "1" : $item["customAmount"];
                     $expireDate = calculateExpiryDate($row["date"], $duration);
                     if (($expireDate >= 30) && ($item["foodState"] === null)) {
             ?>
             <div class="item item-green">
                 <img src="<?= $item['image'] ?>" alt="food" class="item-image item-image-green">
                 <div class="item-details">
-                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?></h3>
+                    <h3 class="item-title item-title-main"><?= ($item["customFoodName"])? $item["customFoodName"] : $item["foodName"] ?> <span class="item-amount">(x<?= $amount ?>)</span></h3>
                     <div class="hide item-options">
                         <div onclick="showEditPopup(<?= $item['userFoodId'] ?>)"><div class="link-imitate">Edit</div></div>
                         <div><a class="link-imitate" href="process-delete-userfood.php?id=<?= $item['userFoodId'] ?>">Delete</a></div>

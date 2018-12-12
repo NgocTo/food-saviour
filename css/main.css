@@ -166,6 +166,9 @@ main {
     margin: 0.5em 0em;
     cursor: pointer;
 }
+.item-amount {
+    font-size: 0.6em;
+}
 .item-title-main {
     border-bottom: 1px solid #E9E9E7;
 }
