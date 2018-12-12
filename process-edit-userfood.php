@@ -2,23 +2,16 @@
 session_start();
 require_once('database.php');
 $userId = $_SESSION['id'];
-$id = $_GET['id'];
-$foodName = $_POST['foodName'];
-$customDuration = ($_POST['customDuration'])? $_POST['customDuration'] : null;
-$customAmount = ($_POST['customAmount'])? $_POST['customAmount'] : null;
+$id = $_POST['edit-id'];
+$customFoodName = $_POST['edit-foodName'];
+$customDurationPost = $_POST['edit-customDuration'];
+$customAmountPost = $_POST['edit-customAmount'];
+$customDuration = ($customDurationPost != "")? "$customDurationPost" : "null";
+$customAmount = ($customAmountPost != "")? "$customAmountPost" : "null";
 
-$stmt = $pdo->prepare("SELECT * FROM `userfood` JOIN `food` ON `userfood`.`foodId` = `food`.`id` WHERE LOWER(`food`.`foodName`) = LOWER('$foodName')");
+$stmt = $pdo->prepare("UPDATE `userfood` SET `customFoodName` = '$customFoodName', `customDuration` = $customDuration, `customAmount` = $customAmount WHERE `id` = '$id'");
+
+
 $stmt->execute();
-$row = $stmt->fetch();
-
-if($row) {
-    $foodId = $row['foodId'];
-    $stmt = $pdo->prepare("UPDATE `userfood` SET `customDuration` = '$customDuration', `customAmount` = '$customAmount' WHERE `id` = '$id' AND `userId` = '$userId'");
-} else {
-    $foodId = 14; // custom food id
-    $stmt = $pdo->prepare("UPDATE `userfood` SET `customFoodName` = '$customFoodName', `customDuration` = '$customDuration', `customAmount` = '$customAmount' WHERE `id` = '$id' AND `userId` = '$userId'");
-}
-
-// $stmt->execute();
-// header("Location: index.php");
+header("Location: index.php");
 ?>

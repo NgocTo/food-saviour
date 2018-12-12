@@ -28,22 +28,38 @@ function searchFoodFunction(e){
     myRequest.send(null);
 }
 
-// quick entry
-// id="addfood" // the popup form
-// id="foodName" // empty input field that needs to be filled in
-// id="add-search" // quick entry search input
-// id="add-btn" // button to search
-var popup = document.getElementById("addfood");
-var popupValue = document.getElementById("foodName");
-var quickEntry = document.getElementById("add-search");
-var quickEntryValue = quickEntry.getAttribute("value");
+// OPEN POP UP
+
 var addBtn = document.getElementById("add-btn");
 addBtn.addEventListener("click", showAddFood, false);
 function showAddFood() {
+    var popup = document.getElementById("addfood");
     if (popup.style.display === "none") {
         popup.style.display = "block";
-        popupValue.setAttribute("value", quickEntryValue);
     } else {
         popup.style.display = "block";
+    }
+}
+
+// POPULATE ADD FORM
+searchContainer.addEventListener("click", getFood);
+function getFood() {
+    var li = searchContainer.querySelectorAll("li");
+    for (var i = 0; i < li.length; i++) {
+        var quickEntryFoodName = li[i].innerHTML;
+        var myRequest = new XMLHttpRequest;
+        var url = 'process-read-food-by-name.php?quick-entry-food-name=' + quickEntryFoodName;
+        myRequest.onreadystatechange = function(){
+        	if(myRequest.readyState === 4){
+        		var results = JSON.parse(myRequest.responseText);
+                console.log(results.foodName);
+                foodNameValue = results.foodName;
+                var foodName = document.getElementById("foodName");
+                foodName.value = foodNameValue;
+                showAddFood();
+        	}
+        };
+        myRequest.open("GET", url, true);
+        myRequest.send(null);
     }
 }
