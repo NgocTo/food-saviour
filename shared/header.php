@@ -12,15 +12,12 @@
             </a>
         </li>
         <li id="setting-btn">
-            <a href="<?= ROOT_URI ?>settings-general.php">
-                <i class="fas fa-cog" title="Settings"></i>
-                <span class="hidden">Settings</span>
-            </a>
-            <!-- <ul id="dropdownlist" class="hide">
-                <li><a href="process-logout.php">Logout</a></li>
-                <li><a href="settings-general.php">Settings</a></li>
-                remember to put ROOT_URI back in front of href
-            </ul> -->
+            <i class="fas fa-cog" title="Settings"></i><span class="hidden">Settings</span>
+            <ul id="dropdownlist" class="hide">
+                <li><a href="<?= ROOT_URI ?>process-logout.php">Logout</a></li>
+                <li><a href="<?= ROOT_URI ?>settings-general.php">Settings</a></li>
+            </ul>
         </li>
     </ul>
+    <script src="<?= ROOT_URI ?>js/settings.js"></script>
 </header>

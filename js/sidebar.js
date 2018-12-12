@@ -1,6 +1,6 @@
 // food search
 // so the dropdown doesn't get too long should we set limit on how many results show?
-// also not sure why it stopped working I didn't make any changes to this section 
+// also not sure why it stopped working I didn't make any changes to this section
 var searchContainer = document.getElementById("searchContainer");
 var searchFood = document.getElementById("add-search");
 searchFood.addEventListener('input', searchFoodFunction, false);
@@ -8,7 +8,7 @@ function searchFoodFunction(e){
     searchContainer.innerHTML = '';
     var searchFoodVal = searchFood.value;
     var myRequest = new XMLHttpRequest;
-    var url = 'process-add.php?add-search=' + searchFoodVal;
+    var url = 'process-search.php?add-search=' + searchFoodVal;
     myRequest.onreadystatechange = function(){
     	if(myRequest.readyState === 4){
     		var results = JSON.parse(myRequest.responseText);
